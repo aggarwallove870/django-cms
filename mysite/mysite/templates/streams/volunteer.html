@@ -1,0 +1,25 @@
+{% load wagtailimages_tags %}
+{% load static %}
+<section class="four-boxes-section pt-54 pb-150 ">
+    <div class="container site-container">
+      <div class="row-box">
+
+    {% for volunteers in self.volunteer %}
+            <div class="col-box">
+            <div class="count-box orange-box">
+                <div class="count">
+                <h1>{{volunteers.volunteers}}</h1>
+                </div>
+                <div class="count-text">
+                <h5>{{volunteers.text}}</h5>
+                {% image volunteers.icon width-500  as img %}
+                <img src="{{img.url}}" class="img-fluid count-img">  
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+        </div>
+        </div>
+   
+    
+  </section>

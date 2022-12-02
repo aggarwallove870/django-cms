@@ -1,0 +1,28 @@
+<section class="tutor">
+    <div class="container site-container">
+     <div class="row">
+      {% for item in self.studenteducator %}
+       <div class="col-md-6">
+         <div class="student-div">
+           <h2>{{item.heading_student}}</h2>
+           <p>{{item.sub_heading_student}}</p>
+            <div class="banner-two-buttons">
+              <a class="text-decoration-none orange me-3">{{item.button_text_student}}</a>
+            </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="student-div ps-5">
+                      <h2>{{item.heading_educator}}</h2>
+                      <p>{{item.sub_heading_educator}} </p>
+                      <div class="banner-two-buttons">
+              <a class="text-decoration-none green">{{item.button_text_educator}}</a>
+            </div>
+         </div>
+       </div>
+       {% endfor %}
+     </div>
+   </div>
+   
+ </section>
+ 

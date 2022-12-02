@@ -1,0 +1,38 @@
+{% load wagtailimages_tags %}
+{% load static %}
+
+<section class="animals-section">
+    <!-- header start -->
+
+    <!-- animal banner-section start -->
+    <section class="animals-banner">
+      {% for item in self.banner %}
+ 
+        {% image self.banner_image width-1900 as img %}
+        <div class="container " style="padding: 60px; max-width:100%; background-image: url('{{img.url}}'); background-size:cover;">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+        <div class="banner-content">
+          <h4>{{item.banner_overlay_text_block1}}</h4>
+          <h2 class="">{{item.banner_overlay_text_block2}}</h2>
+          <p class="pt-2 pb-4">{{item.banner_overlay_text_block3}}</p>
+          <div class="banner-two-buttons">
+          <a href="{{item.banner_button_url_1}}" class="text-decoration-none orange me-3">{{item.banner_button_1}}</a>
+          <a href="{{item.banner_button_url_2}}" class="text-decoration-none green">{{item.banner_button_2}}
+          </a>
+          </div>
+        </div>
+          </div>
+          <div class="col-md-6">
+          <div class="home-banner-image">
+              {% image item.banner_overlay_image width-500  as img %}
+              <img src="{{img.url}}" class="img-fluid">
+          </div>
+          </div>
+          </div>
+          </div>
+        {% endfor %}
+      
+    </section>
+    <!-- animal banner section end -->
+</section>

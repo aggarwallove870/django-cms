@@ -1,0 +1,59 @@
+
+{% load menus_tags %}
+{% get_menu "socialmenu" as navigation %}
+{% load wagtailimages_tags %}
+{% load menus_tags %}
+
+{% footer  as footer %}
+
+<footer class="p-90">
+  <div class="container site-container">
+   <div class="row-footer">
+     <div class="col-f">
+       <div class="about-f inner">
+        {% image footer.logo width-1900 as img %}
+               <img src="{{img.url}}" alt="" class="img-fluid pb-3">
+                
+    
+        
+         <h3>{{footer.footer_icon_title}}</h3>
+         <p>{{footer.footer_paragraph}}
+        </p>
+       </div>
+     </div>
+     <div class="col-f">
+       <div class="contact-f inner">
+<h4>Contact Us</h4>
+<p class="phone pb-3">{{footer.phone}}<br>
+{{footer.address}}
+</p>
+<p class="adress">{{footer.email}}</p>
+     </div>
+   </div>
+     <div class="col-f">
+       <div class="follow-f inner">
+<h4>Follow Us</h4>
+<div class="social-icons">
+  {% for item in navigation.menu_items.all %}
+    <a href="" class="text-decoration-none mb-3 d-block"><div class="icon1">
+      <i class="{{item.icon}}"></i>
+      <span>{{item.social_media_name}}</span>
+    </div>
+    </a>
+ {% endfor %}
+ </div>
+     </div>
+     </div>
+   </div>
+   <div class="copyright d-flex justify-content-between mt-5">
+     <p>© 2022 Youth4Animals</p>
+     <div class="copy-link">
+       <ul class="d-flex list-unstyled">
+         <li class="mx-2"><a href="" class="text-decoration-none">Privacy Policy</a></li> |
+         <li class="mx-2"><a href="" class="text-decoration-none">Terms & Conditions</a></li>
+       </ul>
+     </div>
+ </div>
+ </div>
+
+</footer>

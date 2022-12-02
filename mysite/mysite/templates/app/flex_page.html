@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+{% load wagtailcore_tags %}
+{% load static %}
+{% block extra_css %}
+{# Override this in templates to add extra stylesheets #}
+
+<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+
+
+{% endblock %}
+{% block content %}
+    <div class="container">
+        {% comment %} {{ self.subtitle }} {% endcomment %}
+    </div>
+
+{% for block in page.content %}
+    {% include_block block %}
+{% endfor %}
+{% include 'streams/footer.html' %}
+{% block extra_js %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+{% endblock %}
+
+{% endblock %}

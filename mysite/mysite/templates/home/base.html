@@ -1,0 +1,87 @@
+{% load wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailuserbar %}
+{% comment %} {% get_menu "main" as navigation %} {% endcomment %}
+{% comment %} {% get_menu "footer" as footer_ menu %} {% endcomment %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+            {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+            {% wagtail_site as current_site %}
+            {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+            {% endblock %} 
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+        {# Force all links in the live preview panel to be opened in a new tab #}
+        {% if request.in_preview_panel %}
+        <base target="_blank">
+        {% endif %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/fontawesome.min.css" integrity="sha512-A4YgsmlA3WJ44ahx3x6XoZWzyrhjIJRze0z6MpSIIWoF3MTvebHass8CkrFX66KhIkuuFIhHQyqi5PAH2xDIGQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        {# Global stylesheets #}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mysite.css' %}">
+      
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+        {% include 'home/header.html' %}
+
+        {% block content %}{% endblock %}
+          {# Global javascript #}
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+        {% block extra_js %}
+        
+        {% endblock %}
+
+        <script>
+            jQuery(document).ready(function($) {
+
+                          "use strict";
+                          //  TESTIMONIALS CAROUSEL HOOK
+                          $('#customers-testimonials').owlCarousel({
+                              loop: true,
+                              center: true,
+                              items: 1,
+                              margin: 0,
+                              autoplay: false,
+                              dots:false,
+                              arrow:true,
+                              autoplayTimeout: 5000,
+                              smartSpeed: 450,
+                              responsive: {
+                                0: {
+                                  items: 1
+                                },
+                                768: {
+                                  items: 1
+                                },
+                                1170: {
+                                  items: 1
+                                }
+                              }
+                          });
+                      });
+              $(".owl-carousel .btn.next").hide();
+              $(".owl-carousel .btn.prev").hide();
+            </script>
+            
+    </body>
+
+   
+       
+
+</html>

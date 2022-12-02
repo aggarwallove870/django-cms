@@ -1,0 +1,252 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+
+
+{% block extra_css %}
+
+{% comment %}
+Delete the line below if you're just getting started and want to remove the welcome screen!
+{% endcomment %}
+<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+{% endblock extra_css %} 
+
+{% block content %}
+
+
+  {% comment %} <section class="animals-section">
+    <!-- header start -->
+
+    <!-- animal banner-section start -->
+    <section class="animals-banner">
+      {% image self.banner_image width-1900 as img %}
+      <div class="container " style="padding: 60px; max-width:100%; background-image: url('{{img.url}}'); background-size:cover;">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+      <div class="banner-content">
+        <h4>Get ready to embark on</h4>
+        <h2 class="">THE YOUTH4ANIMALS EduAction CHALLENGE</h2>
+        <p class="pt-2 pb-4">{{self.banner_overlay_text|richtext }}</p>
+        <div class="banner-two-buttons">
+          <a href="" class="text-decoration-none orange me-3">{{self.banner_button_first}}</a>
+          <a href="" class="text-decoration-none green">{{self.banner_button_second}}
+          </a>
+        </div>
+              </div>
+            </div>
+
+    <div class="col-md-6">
+      <div class="">
+        {% image self.banner_overlay_image width-500  as img %}
+        <img src="{{img.url}}" class="img-fluid">
+      </div>
+    </div>
+    </div>
+    </div>
+      
+    </section>
+    <!-- animal banner section end -->
+</section>
+        <!-- animal challange section start -->
+<section class="animal-challange pt-100">
+  <div class="container site-container">
+    <div class="row align-items-center">
+      <div class="col-md-5">
+        <div class="ac-content">
+          <h3 class="mb-3">{{self.heading_of_section_1|richtext}}</h3>
+          <p>{{self.subheading_of_section_1|richtext }}
+</p>
+        </div>
+      </div>
+      <div class="col-md-7">
+        <div class="ac-image">
+          {% image self.image_of_section_1 width-700  as img %}
+          <img src="{{img.url}}" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> {% endcomment %}
+
+
+
+            <!-- animal challange section end  -->
+             <!-- four boxes section start -->
+<section class="four-boxes-section pt-54 pb-150">
+  <div class="container site-container">
+    <div class="row-box">
+      <div class="col-box">
+        <div class="count-box orange-box">
+          <div class="count">
+            <h1>{{self.volunteers_box1_section_2}}</h1>
+          </div>
+          <div class="count-text">
+            <h5>{{self.volunteers_box1_text_section_2}}</h5>
+            {% image self.volunteers_box1_image_section_2 width-500  as img %}
+            <img src="{{img.url}}" class="img-fluid count-img"> 
+          </div>
+        </div>
+      </div>
+      <div class="col-box">
+        <div class="count-box green-box">
+          <div class="count">
+            <h1>{{self.volunteers_box2_section_2}}</h1>
+          </div>
+          <div class="count-text">
+            <h5>{{self.volunteers_box2_text_section_2}}</h5>
+            {% image self.volunteers_box2_image_section_2 width-500  as img %}
+            <img src="{{img.url}}" class="img-fluid count-img"> 
+          </div>
+        </div>
+      </div>
+      <div class="col-box">
+        <div class="count-box green-box">
+          <div class="count">
+            <h1>{{self.volunteers_box3_section_2}}</h1>
+          </div>
+          <div class="count-text">
+            <h5>{{self.volunteers_box3_text_section_2}}</h5>
+            {% image self.volunteers_box3_image_section_2 width-500  as img %}
+            <img src="{{img.url}}" class="img-fluid count-img"> 
+          </div>
+        </div>
+      </div>
+      <div class="col-box">
+        <div class="count-box orange-box">
+          <div class="count">
+            <h1>{{self.volunteers_box4_section_2}}</h1>
+          </div>
+          <div class="count-text">
+            <h5>{{self.volunteers_box4_text_section_2}}</h5>
+            {% image self.volunteers_box4_image_section_2 width-500  as img %}
+            <img src="{{img.url}}" class="img-fluid count-img"> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+              <!-- four boxes section end -->
+<!-- leaderboard section start -->
+<section class="leaderboard" style="background-image:{% static 'images/yellow-bg.png' %};">
+  <div class="container site-container">
+          <h3 class="mb-4">Leaderboard</h3>
+    <div class="row">
+      
+      {% for item in imgglry %}
+      <div class="col-md-4 col-lg-3">
+        <div class="leaders">
+          {%image item.leader_image fill-300x200 as img  %}
+        <img src="{{img.url}}" class="img-fluid"> 
+        <h5 class="leader-name  mt-4">{{item.leader_name}}
+        </h5>
+        <p class="university">{{item.leader_university_name}} </p>
+        <p class="university second">{{item.leader_university_address}}</p>
+        </div>
+        </div>
+
+    {% endfor %}
+    {% comment %} {% for mnnu in menumy %}
+    {{mnnu.link_title}}
+    {% endfor %} {% endcomment %}
+    </div>
+    <div class="view-more">
+    <a href="" class="text-decoration-none">
+      View More
+    </a>
+  </div>
+  </div>
+</section>
+
+<!-- leaderboard section end -->
+
+<!-- testimonial section start-->
+<section class="testimonial-section">
+  <div class="container site-container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="testimonial-reviews">
+          <p class="mb-0">TESTIMONIALS</p>
+          <h3>REVIEWS</h3>
+        </div>
+      </div>
+      <div class="col-md-9">
+         <!-- TESTIMONIALS -->
+  <div class="testimonials">
+          <div id="customers-testimonials" class="owl-carousel">
+ 
+            <!--TESTIMONIAL 1 -->
+            {% for carousel_item in page.carousel_items.all %}
+              <div class="item">
+                <div class="   ">
+                  <img src="{% static 'images/arrow.png' %}" alt="">
+                  
+                  <p class="mb-0 ">{{carousel_item.caption}}</p>
+                  <div class="test-elements">
+                    <div class="test-image">
+                    <img src="{% static 'images/star.png' %}" alt="">
+                  </div>
+                  <div class="test-name ms-3">
+                  <h5 class="">{{carousel_item.username}}</h5>
+                  <p class="mb-0" >{{carousel_item.proffesion}}</p>
+                  </div>
+                </div>
+                   </div> 
+                  </div>
+            
+            {% endfor %}
+               
+                  
+
+ 
+    </div>
+  </div>
+  </section>
+
+
+
+<!-- testimonial section end -->
+<!-- tutor section start -->
+<section class="tutor">
+   <div class="container site-container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="student-div">
+          <h2>I'M A STUDENT</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing 
+and typesetting industry. Lorem Ipsum has been 
+the industry's standard dummy text ever  </p>
+<div class="banner-two-buttons">
+  <a class="text-decoration-none orange me-3">LEARN MORE</a>
+</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="student-div ps-5">
+          <h2>I'M A EDUCATOR</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing 
+and typesetting industry. Lorem Ipsum has been 
+the industry's standard dummy text ever  </p>
+          <div class="banner-two-buttons">
+  <a class="text-decoration-none green">LEARN MORE</a>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</section>
+
+  
+
+
+{% endblock content %}

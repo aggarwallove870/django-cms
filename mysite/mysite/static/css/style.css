@@ -1,0 +1,1614 @@
+body{   
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: 'gothambold';
+    src: url('../fonts/gotham-bold-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gothamlight';
+    src: url('../fonts/gotham-light-webfont.woff2') format('woff2'),
+         url('../fonts/gotham-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gothambook_italic';
+    src: url('../fonts/gothambookitalic-webfont.woff2') format('woff2'),
+         url('../fonts/gothambookitalic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'gothammedium';
+    src: url('../fonts/gothammedium-webfont.woff2') format('woff2'),
+         url('../fonts/gothammedium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Gotham';
+    src: url('../fonts/Gotham-Book.woff2') format('woff2'),
+        url('../fonts/Gotham-Book.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'proxima_novabold';
+    src: url('../fonts/proxima_nova_bold-webfont.woff2') format('woff2'),
+         url('../fonts/proxima_nova_bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'bertilda';
+    src: url('bertilda.woff2') format('woff2'),
+        url('bertilda.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Proxima Nova Rg';
+    src: url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Proxima Nova Lt';
+    src: url('../fonts/ProximaNova-Semibold.woff2') format('woff2'),
+        url('../fonts/ProximaNova-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+section.four-boxes-section {
+    padding-top: 50px;
+}
+.site-container{
+    max-width:1170px !important;
+}
+
+.pt-100{
+    padding-top:100px;
+}
+
+.pt-54{
+   padding-top:54px;   
+}
+.pb-150{
+  padding-bottom:150px;  
+}
+
+/* header css start */
+
+header {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+header .logo-side {
+    background: #ffd100;
+        padding: 0px 50px;
+}
+
+header .donate-button-side a.donate-button{
+
+}
+header .donate-button-side {
+    background: #f76f00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header a.donate-button {
+   padding: 8px 54px;
+    display: inline-block;
+    color: #fff;
+    border: 2px solid #ffffff;
+}
+
+header .logo-side  .navbar-expand-lg .navbar-collapse{
+	justify-content: end;
+}
+header .logo-side  a.nav-link {
+    font-family: 'Proxima Nova Lt';
+    color: #fff;
+    font-size: 20px;
+}
+header .logo-side  .navbar-nav .nav-link.active{
+	 font-family: 'Proxima Nova Lt';
+    color: #fff;
+    font-size: 20px;
+}
+header .logo-side  ul.navbar-nav li.nav-item {
+    margin-left: 50px;
+}
+header .logo-side a.navbar-brand img {
+    width: 140px;
+}
+
+
+
+/* header css end */
+
+
+/* home page css start */
+
+section.animals-section {
+    background: url(../images/youth4animalbanner.jpg);
+    background-size: cover;
+}
+section.animals-banner {
+    /* padding: 60px 0px; */
+    position: relative;
+    z-index:1;
+}
+section.animals-banner:after {
+    opacity: 0.400;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    content: "";
+    position: absolute;
+    top: 0;
+     z-index:-1;
+}
+.banner-content h4 {
+    font-size: 24px;
+    color: #fff;
+    font-family: 'Gotham';
+}
+.banner-content h2{
+    font-size: 40px;
+    color: #fff;
+    font-family: 'gothammedium';
+}
+.banner-content p {
+    font-size: 24px;
+    color: #fff;
+    font-family: 'Gotham';
+}
+
+.banner-two-buttons a.orange {
+    padding: 12px 22px;
+    background: #f76f00;
+    color: #fff;
+        font-size: 18px;
+    font-family: 'Proxima Nova Lt';
+}
+.banner-two-buttons a.green {
+    padding: 12px 22px;
+    background: #b7cd1a;
+    color: #fff;
+        font-size: 18px;
+    font-family: 'Proxima Nova Lt';
+}
+.animal-challange .ac-content h3 {
+    font-size: 48px;
+    font-family: 'gothambold';
+    line-height: 48px;
+    color:#000;
+}
+.animal-challange .ac-content p{
+font-size: 20px;
+letter-spacing: 0px;
+line-height: 36px;
+color: #6a6a6a;
+font-family: 'gothamlight';
+}
+.col-box:nth-child(2) .count-box  , .col-box:nth-child(3) .count-box{
+    background-color: #b7cd1a;
+}
+.count-box {
+    border-radius: 10px;
+    background-color: #f76f00;
+    padding: 30px 50px;
+    display: grid;
+    grid-template-rows: auto 104px;
+}
+.count-box h1 {
+    font-size: 120px;
+    font-family: 'gothambold';
+    color: #fff;
+    
+}
+.count-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.count-text h5 {
+    font-size: 40px;
+    font-family: 'gothambold';
+    color: #fff;
+}
+
+.count-box.green-box{
+    background-color: #b7cd1a;
+}
+.row-box {
+    display: grid;
+    grid-template-columns: repeat(2,2fr);
+    gap: 30px;
+}
+/* .ac-image img.img-fluid {
+    width: 600px;
+} */
+.leaderboard-circle{
+    background: #fbd149;
+}
+section.leaderboard {
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+padding-top: 100px;
+    padding-bottom: 250px;
+        position: relative;
+    z-index: 2;
+background-position: center;
+}
+.leaderboard h3 {
+    font-size: 40px;
+    font-family: 'gothambold';
+    color: #fff;
+    text-align: center;
+}
+
+.leaders{
+text-align: center;
+position: relative;
+padding-bottom:30px;
+}
+.leaders img{
+    border-radius: 15px;
+    height: 240px;
+    object-fit: cover;
+}
+.leaders h5 {
+    font-size: 20px;
+    font-family: 'Proxima Nova Lt';
+    color: #fff;
+}
+.leaders p {
+    font-family: 'Proxima Nova Rg';
+    color: #e2ffdf;
+    margin-bottom: 4px;
+}
+.leaders p.university.second {
+    margin-bottom: 20px;
+}
+.leaders:after {
+    content: "";
+    background: #fff;
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    border-radius: 2px;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    right: 0;
+}
+.view-more{
+    text-align: center;
+}
+.view-more a:hover{
+    color:#fff;
+}
+.view-more a {
+    background-color: #f76f00;
+    color: #fff;
+    padding: 5px 30px;
+    text-transform: uppercase;
+    font-family: 'Proxima Nova Lt';
+    line-height: 30px;
+    font-size: 18px;
+    display: inline-flex;
+    margin-top: 20px;
+}
+
+section.testimonial-section {
+    background: #ebebeb;
+    margin-top: -200px;
+    padding-top: 200px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 100px;
+}
+.testimonial-section .row{
+    align-items: center;
+}
+section.testimonial-section:before {
+    content: "hello";
+    background: #17151a;
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    z-index: -2;
+    transform: skew(158deg);
+    left: -5%;
+}
+.testimonial-reviews p {
+    font-size: 24px;
+    font-family: 'Gotham';
+    letter-spacing: 5px;
+    color:#fff;
+}
+.testimonial-reviews h3 {
+    font-family: 'gothambold';
+    font-size: 48px;
+    color:#fff;
+}
+
+
+
+#customers-testimonials .item {
+    text-align: center;
+    opacity: 0;
+    -webkit-transform: scale3d(0.8, 0.8, 1);
+    transform: scale3d(0.8, 0.8, 1);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+#customers-testimonials .owl-item.active.center .item {
+    opacity: 1;
+    
+}
+.owl-carousel .owl-item img {
+    transform-style: preserve-3d;
+    max-width: 90px;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot.active span, #customers-testimonials.owl-carousel .owl-dots .owl-dot:hover span {
+    background: #4280bd;
+    transform: translate3d(0px, -50%, 0px) scale(0.6);
+}
+#customers-testimonials.owl-carousel .owl-dots {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot {
+    display: inline-block;
+    outline: none;
+}
+#customers-testimonials.owl-carousel .owl-dots .owl-dot span {
+    background: #fff;
+    display: inline-block;
+    height: 20px;
+    margin: 0 2px 5px;
+    transform: translate3d(0px, -50%, 0px) scale(0.3);
+    transform-origin: 50% 50% 0;
+    transition: all 250ms ease-out 0s;
+    width: 20px;
+    border-radius: 100%;
+}
+.test-elements {
+    display: flex;
+    align-items: center;
+}
+.test-image img {
+    max-width: 100%!important;
+}
+.test-name h5 {
+    font-size: 24px;
+    font-family: 'gothambold';
+}
+.test-name p {
+    font-family: 'Gotham'!important;
+    font-size: 14px!important;
+    letter-spacing: 1px!important;
+    margin-top: 0px!important;
+}
+
+/* #customers-testimonials .owl-item.active.center {
+    width: 600px!important;
+} */
+
+#customers-testimonials .owl-item.active.center .item p {
+    font-family: 'gothambook_italic';
+    font-size: 24px;
+    color: #000;
+    text-align: start;
+    margin-top: -20px;
+    z-index: 1;
+    position: relative;
+}
+ /* .owl-carousel .owl-stage-outer {
+    height: 270px!important;
+} */
+ .owl-stage-outer {
+    position: absolute;
+    top: 0;
+    left: 5%;
+}
+.owl-carousel .owl-nav.disabled {
+ display: block!important; 
+}
+.owl-carousel .owl-nav.disabled {
+    display: flex!important;
+    justify-content: center;
+        position: absolute;
+    bottom: 0;
+    right: 6%;
+    top: 50%;
+}
+button.owl-prev{
+    display: none;
+}
+.owl-carousel .owl-nav button.owl-next span {
+    background-image: url(../images/test-arrow.png);
+    font-size: 45px;
+    font-size: 78px;
+    color: #ebebeb;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom:-29px;
+    position: absolute;
+    right:0px
+}
+
+section.tutor{
+        background-image: linear-gradient(90deg, #b8cd23 50%, #f06e30 50%);
+        padding: 200px 120px;
+}
+
+.student-div h2 {
+    font-size: 36px;
+    font-family: 'gothambold';
+    color: #fff;
+}
+.student-div p {
+    font-size: 20px;
+    font-family: 'gothamlight';
+    color: #fff;
+    margin-bottom: 50px;
+}
+/* home page css end */
+
+
+
+/* educator banner css start */
+section.educator-section {
+    background: url(../images/educator-banner.jpg);
+}
+
+section.educator-banner {
+    padding: 238px 0px;
+    position: relative;
+    z-index:1;
+}
+section.educator-banner:after {
+    opacity: 0.400;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    content: "";
+    position: absolute;
+    top: 0;
+     z-index:-1;
+}
+.educator-banner h2 {
+    text-align: center;
+    font-size: 60px;
+    font-family: 'gothammedium';
+    color:#fff;
+}
+
+/* educator banner css end */
+
+
+/* footer css start */
+footer{
+    background: #17151a;
+}
+.p-90{
+    padding:90px 0px;
+}
+footer .inner h3 {
+    font-family: 'gothamlight';
+    color: #fff;
+    font-size: 30px;
+}
+footer .inner p{
+    font-family: 'gothamlight';
+    color: #c3c2c4!important;
+    font-size: 20px;
+}
+
+footer .inner h4 {
+    font-size: 30px;
+    font-family: 'gothammedium';
+    color: #fff;
+}
+.social-icons span {
+    font-size: 20px;
+    font-family: 'gothamlight';
+    color: #c3c2c4;
+}
+.social-icons i{
+        color: #eaeaea;
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+footer .inner p.phone , footer .inner p.address{
+    color: #c3c2c4!important;
+}
+footer .inner {
+    display: grid;
+    grid-template-rows: 98px auto auto;
+}
+.about-f.inner {
+    max-width: 450px;
+}
+footer .row-footer {
+    display: grid;
+    grid-template-columns: 45% 30% 25%;
+    gap: 30px;
+    border-bottom: 1px solid #c9f0ff;
+    padding-bottom: 60px;
+}
+footer .copyright p , footer .copyright ul li a , footer .copyright {
+    font-size: 20px;
+    font-family: 'gothamlight';
+    color: #bfbfbf;
+}
+
+/* educator page css start */
+section.educator-section {
+    background: url(../images/educator-banner.jpg);
+    background-size: cover;
+}
+
+section.educator-banner {
+    padding: 250px 0px;
+    position: relative;
+    z-index:1;
+}
+section.educator-banner:after {
+    opacity: 0.400;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    content: "";
+    position: absolute;
+    top: 0;
+     z-index:-1;
+}
+.educator-banner h2 {
+    text-align: center;
+    font-size: 60px;
+    font-family: 'gothammedium';
+    color:#fff;
+}
+
+.educator .row-box {
+    grid-template-columns: repeat(4,2fr);
+}
+.educator .count-text h5 {
+    font-size: 50px;
+
+}
+.educator .count-box h1 {
+    font-size: 24px;
+    }
+    .educator .count-box{
+        padding:30px 20px;
+    }
+    .educator .count {
+    display: flex;
+    align-items: center;
+}
+.educator .count-box {
+    grid-template-rows: 140px 57px;
+}
+.educator .count-box h1{
+    text-transform: uppercase;
+}
+.educator-content .content h2 {
+    font-size: 48px;
+    font-family: 'gothambold';
+}
+.pb-130{
+        padding-bottom: 130px;
+}
+.content p.content-para {
+    font-size: 20px;
+    font-family: 'gothamlight';
+    line-height: 36px;
+    color: #6a6a6a;
+}
+
+section.educator-form {
+    background: #ebebeb;
+    padding: 80px 0px 200px;
+}
+.educator-form h2 {
+    font-size: 48px;
+    font-family: 'gothambold';
+}
+.educator-form p{
+    line-height: 36px;
+    color: #6a6a6a;
+    font-size: 20px;
+    font-family: 'gothamlight';
+}
+.educator-form input.form-control {
+    border: 1px solid #cccccc;
+    border-radius: 0px;
+    padding: 15px 15px;
+    margin-bottom: 10px;
+}
+.educator-form form.educator-form {
+    max-width: 893px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px;
+    text-align: start;
+    margin-top:50px;
+}
+.educator-form form label.form-label , .educator-form form label.form-check-label {
+    line-height: 36px;
+    color: #000;
+    font-size: 20px;
+    font-family: 'gothamlight';
+    text-align: start;
+}
+.educator-form form label.form-label i {
+    font-family: 'gothambook_italic';
+}
+.educator-form form .radio-div{
+    margin:0px 0px 0px;
+}
+.educator-form form .radio-div label.form-label {
+    line-height: 36px;
+    color: #000;
+    font-size: 20px;
+    font-family: 'gothammedium';
+    text-align: start;
+      margin-bottom: 25px;
+}
+.educator-form form .radio-div .form-check{
+    margin-bottom: 25px;
+    
+    align-items: top;
+    grid-template-columns: 0% 80%;
+}
+input.form-control.mt-3.other-option-field.mobile{
+    display: none;
+}
+.educator-form form .radio-div .form-check-input:checked {
+    border-color: #959595;
+}
+.educator-form form .radio-div .form-check label.form-check-label {
+    margin-left: 20px;
+}
+.educator-form form .form-control:focus{
+    box-shadow: none;
+}
+p.form-note{
+    color: #000;
+        padding-bottom: 30px;
+}
+.educator-form form input[type="submit"] {
+    width: 100%;
+    border: none;
+    background-color: #f76f00;
+    color: #fff;
+    padding: 20px;
+    font-size: 20px;
+    font-family: 'gothamlight';
+}
+.radio-div .form-check-input[type=radio]{
+    margin-top:10px;
+}
+
+/* educator page css end */
+
+/* student page css start */
+section.students-section {
+    background: url(../images/student-banner.jpg);
+        background-size: cover;
+}
+.radio-side-input {
+    display: flex;
+    align-items: center;
+        padding-top: 40px;
+}
+.educator-form form label.form-label, .educator-form form label.form-check-label , 
+.educator-form p {
+    font-size: 16px;
+}
+.educator-form .radio-side-input input.form-control{
+    width:66%;
+    margin-left: 10px;
+}
+/* student page css end */
+
+/*  profile page css start  */
+.ptb-70{
+    padding:70px 0px 20px;
+    position: relative;
+}
+.profile-content h2 {
+    font-size: 48px;
+    font-family: 'gothambold';
+    color: #000;
+}
+.profile-content p {
+    color: #525252;
+    font-family: 'Proxima Nova Rg';
+    font-size: 24px;
+    line-height: 36px;
+}
+.profile-content span{
+    color: #525252;
+    font-family: 'Proxima Nova Rg';
+    font-size: 20px;
+    line-height:36px;
+}
+.three-achivements{
+display:grid;
+grid-template-columns:repeat(3 , 2fr);
+    border-radius: 20px;
+    padding: 70px 0px 40px;
+    border: 2px solid #ffd100;
+}
+
+.achivements-points p {
+    color: #000;
+    font-family: 'Proxima Nova Rg';
+    font-size: 20px;
+    line-height: 36px;
+    text-transform: uppercase;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 62px;
+
+}
+.pb-50 {
+    padding-bottom: 50px;
+}
+.achivements-points h3 {
+    font-family: 'proxima_nova_bold-webfont';
+    font-size: 48px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 0;
+    line-height: 40px;
+}
+.achivements-points span {
+    color: #000;
+    font-family: 'Proxima Nova Rg';
+    font-size: 18px;
+    line-height: 36px;
+    text-transform: uppercase;
+    }
+
+    .ach-head{
+        border-radius: 20px;
+    background-color: #ffd100;
+    display: flex;
+    justify-content: center;
+    max-width: 270px;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 13%;
+    z-index: 1;
+    }
+     .ach-head h4 {
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: #000000;
+    font-family: 'proxima_nova_bold-webfont';
+    padding: 3px;
+
+}
+/*  profile page css end */
+
+/*  sign page css start */
+.sign-share-section h2 {
+    font-family: 'gothammedium';
+    font-size: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 60px 0px;
+}
+.sign-share-section .col-md-8 {
+    padding-right: 50px;
+}
+.sign-details {
+}
+.sign-image img.img-fluid {
+    height: 350px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.range-content h5 {
+    font-family: 'gothamlight';
+    font-size: 20px;
+    color: #6a6a6a;
+    line-height: 30px;
+}
+.range-content p {
+    font-family: 'gothamlight';
+    font-size: 20px;
+    color: #6a6a6a;
+    line-height: 30px;
+}
+.range-content b {
+    font-family: 'gothambold';
+    color: #000;
+}
+
+.sign-time-box{
+        display: flex!important;
+    border: 1px solid #cccccc;
+    padding: 10px 20px;
+    align-items: start;
+    justify-content: center;
+}
+.user-name{
+    margin-left: 20px;
+}
+
+.sign-time-box h4 {
+    font-family: 'gothambold';
+    font-size: 20px;
+    color: #000;
+    line-height: 1;
+    margin-bottom: 0;
+}
+.range-content .sign-time-box p {
+    font-family: 'gothamlight';
+    font-size: 18px;
+    color: #6a6a6a;
+    line-height: 30px;
+    margin-bottom: 0px;
+}
+.sign-form h3 {
+    font-family: 'gothambold';
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.sign-form .form-group label {
+    font-family: 'gothamlight';
+    font-size: 20px;
+    color: #000;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+.sign-form .form-control {
+    border: 1px solid #cccccc;
+    border-radius: 0px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.sign-form input:focus-visible{
+    box-shadow: none;
+}
+.sign-form button.btn {
+    background: #ff0000;
+    width: 100%;
+    border-radius: 0px;
+    padding: 10px 20px;
+    font-family: 'gothambold';
+    font-size: 18px;
+    line-height: 30px;
+    color: #ffffff;
+}
+.sign-cont {
+    padding: 50px 0px;
+}
+.sign-cont p {
+    font-family: 'gothamlight';
+    font-size: 20px;
+    color: #6a6a6a;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+.sign-cont p b{
+     font-family: 'gothambold';
+     color: #000;
+    }
+section.sign-content {
+    padding: 50px 0px 90px;
+    background: #f9f9f9;
+}
+section.sign-content h2 {
+    font-size: 30px;
+    line-height: 48px;
+    color: #000000;
+    font-family: 'gothambold';
+}
+section.sign-content  p.content-para {
+    font-size: 20px;
+    line-height: 36px;
+    color: #6a6a6a;
+    font-family: 'gothambook_italic';
+}
+
+/*  sign page css end */
+
+@media(max-width:1300px){
+  footer .row-footer {
+    grid-template-columns: repeat(3,2fr);
+}
+
+}
+
+
+@media(max-width:1260px){
+	header {
+	    grid-template-columns: 80% 20%;
+	}
+	}
+
+    @media(max-width:1230px){
+        .owl-stage-outer{
+            left: 0;
+        }
+        #customers-testimonials .owl-item.active.center {
+            padding-left: 60px;
+        }
+    }
+@media(max-width:1200px){
+    section.leaderboard-circle{
+        background-size: contain!important;
+    }
+    section.testimonial-section:before{
+        left: -10%;
+        width:42%;
+    }
+    .sign-share-section h2{
+        font-size: 30px;
+    }
+  footer .row-footer {
+    grid-template-columns: repeat(3,2fr);
+}
+header .logo-side a.nav-link , header .logo-side .navbar-nav .nav-link.active{
+	font-size: 18px;
+}	
+header .logo-side ul.navbar-nav li.nav-item {
+    margin-left: 18px;
+}
+.educator .count-text h5 {
+    font-size: 40px;
+}
+.educator .count-text img {
+    width: 61px;
+}
+}
+
+
+@media(max-width:1160px){
+
+}
+
+@media(max-width:1100px){
+#customers-testimonials .owl-item.active.center {
+    /* width: 750px!important;
+    right: -1%; */
+}
+}
+@media(max-width:1024px){
+    section.leaderboard:after{
+        height:158px!important;
+    }
+    section.leaderboard{
+        padding-bottom: 237px;
+    }
+section.testimonial-section{
+    padding-top:35px;
+    padding-bottom:35px;
+}
+}
+@media(max-width:993px){
+    section.leaderboard:after {
+    height: 155px;
+}
+.leaderboard h3{
+        padding-top: 8px;
+}
+section.leaderboard:before{
+    height: 100px;
+}
+    .profile-content h2 {
+    font-size: 30px;
+
+}
+.achivements-points h3{
+        font-size: 30px;
+}
+.achivements-points p{
+        grid-template-rows: auto;
+}
+.three-achivements{
+        padding: 30px 0px 30px;
+}
+.ach-head h4 {
+    font-size: 20px;
+}
+.ptb-70 {
+    padding: 40px 0px 20px;
+    }
+.ach-head{
+    top:8%;
+}
+    .range-content h5 , .range-content p , .sign-time-box h4{
+        font-size: 16px;
+    }
+    .sign-form h3{
+        font-size: 24px;
+    }
+    .sign-form .form-group label , .sign-cont p , section.sign-content p.content-para{
+      font-size: 16px;  
+    }
+    .sign-share-section .col-md-8 {
+    padding-right: 20px;
+}
+    .sign-share-section h2{
+        padding: 20px 0px;
+    }
+	.educator-banner h2 , .educator-form h2 {
+    font-size: 30px;
+}
+section.educator-form{
+	    padding: 40px 0px 40px;
+}
+.educator .count-box {
+    grid-template-rows: 93px 57px;
+}
+.content p.content-para {
+    font-size: 16px;
+}
+section.educator-banner {
+    padding: 100px 0px;
+}
+}
+
+@media(max-width:992px){
+    footer .inner{
+        grid-template-rows: auto;
+    }
+    footer .inner p.phone{
+        padding-bottom: 0px!important;
+    }
+    footer .row-footer{
+        gap:10px;
+    }
+
+    button.navbar-toggler{
+       background: #b8cd23; 
+    }
+	.educator-banner h2 {
+    font-size: 30px;
+}
+section.educator-banner {
+    padding: 100px 0px;
+}
+	.educator .row-box {
+    grid-template-columns: repeat(3,2fr);
+}
+.pb-130 {
+    padding-bottom: 20px;
+}
+.educator-content .content h2 {
+    font-size: 30px;
+    }
+
+header .logo-side{
+	padding: 0px 15px;
+}
+
+	  footer .row-footer {
+    grid-template-columns: repeat(2,2fr);
+} 
+	.count-box h1 {
+    font-size: 40px;
+}
+.count-text h5 {
+    font-size: 24px;
+    }
+  
+section.tutor{
+	    padding: 40px 40px;
+}
+.p-90 {
+    padding: 20px 0px;
+}
+.pt-100 {
+    padding-top: 20px;
+}
+	
+	.animal-challange .ac-content h3 {
+    font-size: 40px;
+}
+.animal-challange .ac-content p {
+    font-size: 16px;
+    }
+}
+@media(max-width:991px){
+    #customers-testimonials .owl-item.active.center{
+        padding-left:0px;
+    }
+    .owl-carousel .owl-nav button.owl-next span{
+        bottom:-40px;
+    }
+    section.testimonial-section{
+        margin-top: -199px;
+
+    }
+    section.testimonial-section {
+        padding-top: 65px;
+    }
+      header .logo-side ul.navbar-nav li.nav-item {
+    margin-left: 0;
+    padding: 4px 20px;
+    border-bottom: 1px solid #fff;
+}
+	header .logo-side a.nav-link, header .logo-side .navbar-nav .nav-link.active {
+    font-size: 16px;
+}
+	header {
+    grid-template-columns: 100%;
+    position: relative;
+}
+header .donate-button-side {
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    right: 0;
+    
+    transform: translate(-50% , -50%);
+    height: 100%;
+    }
+   header .navbar-collapse {
+    background: #f06e30;
+    position: absolute;
+    z-index: 99;
+    right: 0;
+    left: 0;
+    top:100%;
+}
+header.navbar-collapse a.nav-link{
+    text-align: center;
+        padding: 15px;  
+
+}
+header .navbar-collapse a.nav-link{
+    color:#fff;
+}
+header .logo-side a.nav-link, header .logo-side .navbar-nav .nav-link.active{
+	color:#fff;
+    padding: 5px;
+
+}
+	.pt-54 {
+    padding-top: 20px!important;
+}
+.pb-150 {
+    padding-bottom: 83px!important;
+}
+section.testimonial-section{
+	padding-bottom: 20px;
+}
+
+.owl-carousel .owl-nav button.owl-next span{
+	color:#000;
+}
+	.testimonial-reviews {
+    text-align: center;
+}
+.student-div h2 {
+    font-size: 30px;
+}
+#customers-testimonials .owl-item.active.center {
+    width: auto;
+}
+	section.testimonial-section:before{
+		display: none;
+	}
+section.testimonial-section {
+    background-image: linear-gradient(41deg, #000000 50%, #000000 50%);
+}
+#customers-testimonials .owl-item.active.center .item p{
+	color:#fff;
+}
+.test-name h5{
+	color:#fff;
+}
+.banner-two-buttons a.orange , .banner-two-buttons a.green{
+	padding: 12px 14px;
+	font-size: 18px;
+}
+}
+
+@media(max-width:768px){
+
+	.animal-challange .ac-content h3{
+	    line-height: 33px;
+	}
+
+	.banner-content h2 , .animal-challange .ac-content h3 , .leaderboard h3 , .testimonial-reviews h3 {
+    font-size: 30px;
+}
+.banner-content p br{
+	display: none;
+}
+.banner-content h4 , .banner-content p , .testimonial-reviews p {
+    font-size: 20px;
+}
+}
+@media(max-width:767px){
+    section.leaderboard:before{
+        top: -87px!important;
+    }
+    .logo-side img {
+        max-width: 23%;
+        height: auto;
+    }
+    .home-banner-image {
+        text-align: center;
+    }
+    .tutor .student-div{
+        padding-left: 0px!important;
+    }
+    .animals-banner img {
+        margin-top: 40px;
+        text-align: center;
+    }
+    section.testimonial-section{
+        padding-top:150px;
+    }
+    .owl-stage-outer{
+        left: 0;
+    }
+    .owl-carousel .owl-nav.disabled {
+        top: 30%;
+    }
+   
+    section.leaderboard{
+        padding-top:20px;
+    }
+    section.leaderboard:after {
+    height: 124px;
+}
+    .leaderboard h3{
+            padding-top: 20px;
+    }
+    .view-more{
+        padding-bottom: 20px;
+    }
+    .about-f.inner img{
+        margin:0 auto; 
+    }
+    footer .row-footer {
+    grid-template-columns: repeat(1,2fr);
+}
+.about-f.inner {
+    max-width: 100%;
+    text-align: center;
+}
+.contact-f.inner{
+  text-align: center;  
+}
+.follow-f.inner h4{
+  text-align: center;    
+}
+.social-icons {
+    max-width: 200px;
+    margin: 0 auto;
+}
+footer .inner {
+    grid-template-rows: auto;
+   
+}
+     footer .row-footer{
+        padding-bottom: 20px;
+    }
+    .profile-content p , .profile-content span , .profile-content span{ 
+        font-size: 18px;
+    }
+    .ptb-70 {
+    padding: 40px 0px 0px;
+}
+    .achivements-points p{
+        font-size: 16px;
+    }
+    .achivements-points h3 {
+    font-size: 24px;
+}
+    .profile-image {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.profile-content {
+    text-align: center;
+}
+    .sign-cont {
+    padding: 0px 0px;
+}
+.sign-time-box{
+    max-width: 300px;
+    margin:0 auto;
+}
+.sign-form h3{
+    text-align: center;
+}
+section.sign-content{
+    padding:20px 0px;
+}
+		input.form-control.mt-3.other-option-field.mobile{
+    display: block;
+}
+input.form-control.mt-3.other-option-field.desktop{
+    display: none;
+}
+	.radio-side-input {
+    padding-top: 0;
+}
+.educator-form form .radio-div .form-check {
+    margin-bottom: 15px;
+
+}
+.educator-form .radio-side-input input.form-control {
+    width: 80%;
+    }
+	.educator .row-box {
+    grid-template-columns: repeat(2,2fr);
+}
+	.educator .count-box {
+    grid-template-rows: 66px 57px;
+}
+.educator .count-text img {
+    max-width: 30%;
+}
+	.educator .count-box h1 {
+    font-size: 16px;
+}
+	header .logo-side a.navbar-brand img {
+    width: 100px;
+}
+	header .logo-side{
+		order: 2;
+	}
+	.owl-carousel .owl-stage-outer {
+    height: auto!important;
+}
+	.owl-carousel .owl-nav button.owl-next span{
+		bottom:-35px;
+	}
+#customers-testimonials .owl-item.active.center {
+  
+    right:auto!important;
+}
+	footer .copyright p, footer .copyright ul li a, footer .copyright , footer .inner p , .social-icons span{
+    font-size: 16px;
+}
+	section.tutor {
+    background-image: linear-gradient(180deg, #b8cd23 50%, #f06e30 50%);
+}
+.student-div {
+    padding: 30px 0px!important;
+}
+.follow-f.inner {
+    grid-template-rows: auto auto auto;
+}
+.count-box{
+	grid-template-rows: auto 70px;
+}
+.circle-img img {
+    max-width: 55%;
+}
+.count-text h5 {
+    font-size: 20px;
+}
+.count-text img {
+    max-width: 20%;
+}
+.count-box {
+    padding: 15px 15px;
+    }
+
+	section.leaderboard {
+ 
+    padding-bottom: 0px;
+    background: transparent;
+}
+.leaderboard .site-container {
+    background: #fbd133;
+}
+section.testimonial-section {
+    margin-top: 0px;
+}
+	
+.circle-img{
+	text-align: center;
+}
+.circle-img {
+    text-align: center;
+    margin-top: 40px;
+}
+}
+
+
+@media(max-width:567px){
+    section.leaderboard:after {
+        height: 94px!important;
+    }
+    .row-box {
+    display: grid;
+    grid-template-columns: repeat(1,2fr);
+}
+    section.leaderboard:after {
+    height: 92px;
+}
+section.leaderboard:before {
+    height: 150px;
+    z-index: -1;
+    top: -80px;
+}
+    footer .inner{
+            grid-template-rows: auto;
+    }
+    .about-f.inner{
+        max-width: 100%;
+    }
+
+    .copyright{
+display: block!important;
+text-align: center;
+    }
+    .copy-link ul{
+        display: block!important;
+        font-size: 0px;
+    }
+    .ach-head {
+    top: 4%;
+}
+.ach-head{
+        max-width: 200px;
+}
+    .three-achivements {
+    grid-template-columns: repeat(1 , 2fr);
+}
+	.educator .count-box {
+    grid-template-rows: 100px 57px;
+}
+.educator .row-box {
+    grid-template-columns: auto;
+}
+.radio-side-input {
+    display: block;
+}
+.educator-form .radio-side-input input.form-control{
+	width: 100%;
+	margin-left: 0px;
+}
+.educator-form form .radio-div {
+    margin: 0px 0px;
+}
+.educator .count {
+    margin-top: 20px;
+    text-align: center;
+        justify-content: center;
+}
+
+	.test-elements{
+		display: block;
+	}
+	.test-name h5 {
+    text-align: start;
+}
+.owl-carousel .owl-item .test-image img {
+    display: block;
+    width: 50%;
+    margin: 20px 0px;
+}
+.test-name.ms-3{
+	margin-left:0px!important;
+}
+	.owl-carousel .owl-nav button.owl-next span {
+    bottom: -15px;
+}
+	footer .row-footer{
+		    padding-bottom: 20px;
+	}
+	.count-text {
+    display: block;
+}
+.col-box {
+    text-align: center;
+}
+footer .copyright{
+	margin-top: 20px!important;
+    display: block!important;
+}
+.count-box {
+    grid-template-rows: auto 120px;
+}
+.row-box{
+	gap:10px;
+}
+.banner-two-buttons a.orange, .banner-two-buttons a.green {
+    padding: 12px 8px;
+    font-size: 14px;
+}
+section.tutor {
+    padding: 20px;
+}
+.count-text img {
+    max-width: 40%;
+}
+	footer .copyright p ,footer .copyright ul li a{
+		font-size: 12px;
+        line-height: 25px;
+        margin-bottom: 0px;
+	}
+	.count-text h5 {
+    font-size: 16px;
+}
+
+header a.donate-button {
+    padding: 8px 25px;
+    }
+    footer .row-footer {
+    grid-template-columns: auto;
+    gap:0px;
+}
+}
+
+
+@media(max-width:450px){
+header a.donate-button {
+    padding: 8px 10px;
+    font-size: 14px;
+}	
+
+header .logo-side a.navbar-brand img {
+    width: 90px;
+}
+header .donate-button-side{
+	width: 79px;
+    height: auto;
+}
+.animals-banner .container{
+    padding: 30px 15px!important;
+}
+.banner-two-buttons a.orange, .banner-two-buttons a.green{
+    font-size:12px;
+}
+.banner-content h2, .animal-challange .ac-content h3, .leaderboard h3, .testimonial-reviews h3 {
+    font-size: 22px;
+}
+section.leaderboard:before {
+    top: -57px!important;
+}
+}
+
+
+
+
+

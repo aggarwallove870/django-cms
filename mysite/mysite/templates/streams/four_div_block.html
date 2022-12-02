@@ -1,0 +1,41 @@
+{% load wagtailimages_tags %}
+
+
+
+
+<div class="row flashBox_card" style="margin: 0 60px">
+
+  {% for card in self.cards %}
+  <div class="col-md-3" style="background: coral; height:100px;">
+    <div class="" style="display: flex; justify-content: space-between;">
+      <div class="">
+        {{card.title}}
+      </div>
+      {%image card.Image fill-50x50 as img  %}
+      <div class="">
+        <img src="{{ img.url}}" class="card-img-top" alt="{{ img.alt }}">
+      </div>
+
+    </div>
+    <div class="">
+    {{card.text}}
+    </div>
+
+  
+</div>
+</div>
+
+{% comment %} 
+    {%image card.Image fill-300x200 as img  %}
+    <div class="card d-inline" style="width: 18rem;">
+        <img src="{{ img.url}}" class="card-img-top" alt="{{ img.alt }}">
+        <div class="card-body"> 
+          <h5 class="card-title">{{ card.title }}</h5>
+          <p class="card-text">{{ card.text }}</p>
+        </div>
+      </div>
+  </div> {% endcomment %}
+
+
+
+{% endfor %}

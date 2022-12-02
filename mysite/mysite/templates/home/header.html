@@ -1,0 +1,45 @@
+
+{% load menus_tags %}
+{% get_menu "mainmenu" as navigation %}
+{% load static wagtailcore_tags wagtailuserbar %} 
+{% navbarlogo as logo %}
+{% load wagtailimages_tags %}
+<style>
+    nav.navbar.navbar-expand-lg.shadow-sm.p-3 {
+        background: yellow;
+    }
+    
+</style>
+
+<header>
+    <div class="logo-side">
+    <nav class="navbar navbar-expand-lg">
+<div class="container-fluid">
+    {% image  logo.logo fill-200x100  %}
+  <a class="navbar-brand" href="#"> <img src="" alt="" class="img-fluid"></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+   
+    
+        {% for item in navigation.menu_items.all %}
+        <li class="nav-item">
+            <a href="{{ item.link }}" class="nav-link" {% if item.open_in_new_tab %} target="_blank" {% endif %}>{{ item.title }}</a>
+        </li>
+    {% endfor %}
+   
+  
+    </ul>
+  </div>
+</div>
+</nav>
+    </div>
+    <div class="donate-button-side">
+      <a href="" class="donate-button text-decoration-none">
+        DONATE
+      </a>
+    </div>
+  </header>
+  <!-- header end -->

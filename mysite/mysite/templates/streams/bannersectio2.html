@@ -1,0 +1,14 @@
+{% load wagtailimages_tags %}  
+ {% for item in self.banner_section_2 %}  
+ {%image item.banner_image fill-300x200 as img  %}
+   {% comment %} {%image banner_section_2.banner_image fill-300x200 as img  %}  {% endcomment %}
+    <section class="educator-section" style="background: url('{{img.url}}');
+    background-size: cover;">
+        <!-- educator -banner-section start -->
+        <section class="educator-banner">
+        <h2>{{item.banner_overlay_text}}</h2>
+        
+        </section>
+        <!-- educator banner section end -->
+    </section>
+{% endfor %}

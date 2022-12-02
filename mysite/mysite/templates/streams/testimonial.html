@@ -1,0 +1,55 @@
+
+{% load wagtailimages_tags %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  .checked {
+    color: orange;
+  }
+  </style>
+<!-- testimonial section start-->
+<section class="testimonial-section">
+    <div class="container site-container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="testimonial-reviews">
+            <p class="mb-0">TESTIMONIALS</p>
+            <h3>REVIEWS</h3>
+          </div>
+        </div>
+        <div class="col-lg-9">
+           <!-- TESTIMONIALS -->
+    <div class="testimonials">
+            <div id="customers-testimonials" class="owl-carousel">
+   
+           {% for item in self.testimonialslider %}
+                <div class="item">
+                  <div class="   ">
+                     <img src="{% static 'images/arrow.png' %}" alt=""> 
+                    
+                    <p class="mb-0 ">{{item.caption}}</p>
+                    <div class="test-elements">
+                      <div class="test-image">
+                     {% comment %} <img src="{% static 'images/star.png' %}" alt="">  {% endcomment %}
+                     
+                      {% for _ in ''|center:item.rating %}
+                      <span class="fa fa-star checked"></span>
+                      {% endfor %}
+                      
+                    </div>
+                    <div class="test-name ms-3">
+                    <h5 class="">{{item.username}}</h5>
+                    <p class="mb-0" >{{item.proffesion}}</p>
+                    </div>
+                  </div>
+                     </div> 
+                    </div>
+              
+          {% endfor %} 
+                 
+                    
+  
+   
+      </div>
+    </div>
+    </section>

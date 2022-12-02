@@ -1,0 +1,36 @@
+{% load wagtailimages_tags %}
+ <!-- four boxes section start -->
+
+ <section class="four-boxes-section pt-54 pb-130 educator">
+    <div class="container site-container">
+    
+      <div class="row-box">
+    {% for card in self.cards %} 
+        <div class="col-box">
+        
+          <div class="count-box orange-box">
+            
+            <div class="count-text">
+              <h5> {{card.title}}</h5>
+              {%image card.Image fill-50x50 as img  %}
+              <img src="{{ img.url}}" class="img-fluid count-img"> 
+            </div>
+            <div class="count">
+              <h1>{{card.text}}</h1>
+            </div>
+          </div>
+       
+        
+        </div>
+    {% endfor %}
+    
+
+      </div>
+
+    </div>
+
+    
+  </section>
+
+    <!-- four boxes section end -->
+  

@@ -1,0 +1,22 @@
+{% load wagtailimages_tags %}
+<section class="leaderboard">
+    <div class="container site-container">
+            <h3 class="mb-4">Leaderboard</h3>
+      <div class="row">
+        {% for i in self.carousel_field %}
+        <div class="col-md-4 col-lg-3">
+        <div class="leaders">
+            {%image card.image fill-300x200 as img  %}
+          <img src="{{img.url}}" class="img-fluid">
+          <h5 class="leader-name mt-4">
+            {{i.text}}
+          </h5>
+          <p class="university">UNIVERSITY OF TORONTO</p>
+          <p class="university second">TORONTO CANADA </p>
+        </div>
+      </div>
+      {% endfor %}
+      </div>
+    </div>
+</section>
+  

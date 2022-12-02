@@ -1,0 +1,25 @@
+{% load wagtailimages_tags %}
+{% load static %}
+
+
+<section class="animal-challange pt-100">
+    <div class="container site-container">
+      <div class="row align-items-center">
+        {% for i in self.divsection %}
+        <div class="col-md-5">
+          <div class="ac-content">
+            <h3 class="mb-3">{{i.title}}</h3>
+            <p>{{i.subtitle }}</p>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="ac-image">
+            {% image  i.divsection_image width-700  as img %}
+            <img src="{{img.url}}" class="img-fluid">
+          </div>
+        </div>
+
+    {% endfor %}
+      </div>
+    </div>
+  </section>
