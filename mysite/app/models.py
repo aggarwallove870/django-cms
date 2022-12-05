@@ -40,8 +40,9 @@ class FlexPage(Page):
             ("divsection",blocks.DivSectionBlock()),
             ("studentandeducator", blocks.StudentandEducatorblock()),
             ("banner_section_2", blocks.Banner_Image_Section2()),
-            ("staticform",blocks.RegisterForm()),
+            ("educator_register_form",blocks.RegisterForm()),
             ("four_div_block_2",blocks.FourdivBlock2()),
+             ("student_register_form",blocks.StudentForm()),
             
    
             # ("cta",blocks.CtaBlock()),

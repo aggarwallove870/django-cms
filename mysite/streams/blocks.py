@@ -28,8 +28,8 @@ class CardBlock(blocks.StructBlock):
     [
 
         ("Image", ImageChooserBlock(required=True)),
-        ("title", blocks.CharBlock(required=True, max_length=40)),
-        ("text", blocks.TextBlock(required=True,max_length=50)),
+        ("title", blocks.CharBlock(required=True)),
+        ("text", blocks.TextBlock(required=True)),
         ("button", blocks.PageChooserBlock(required=False)),
         ("button_url", blocks.URLBlock(required=False)),
     ]
@@ -47,8 +47,8 @@ class FourdivBlock(blocks.StructBlock):
     [
 
         ("Image", ImageChooserBlock(required=True)),
-        ("title", blocks.CharBlock(required=True, max_length=40)),
-        ("text", blocks.TextBlock(required=True,max_length=50)),
+        ("title", blocks.CharBlock(required=True)),
+        ("text", blocks.TextBlock(required=True)),
     ]
     )
      )
@@ -63,7 +63,7 @@ class ButtonBlock(blocks.StructBlock):
     button= blocks.ListBlock(
         blocks.StructBlock(
             [
-                ("button_text", blocks.CharBlock(required=True, max_length=50)),
+                ("button_text", blocks.CharBlock(required=True)),
                 ("button_url", blocks.URLBlock(required=False)),
             ]
     )
@@ -79,9 +79,9 @@ class FooterBlock(blocks.StructBlock):
     [
 
         ("Image", ImageChooserBlock(required=True)),
-        ("title", blocks.CharBlock(required=True, max_length=40)),
-        ("text", blocks.TextBlock(required=True,max_length=50)),
-        ("ul_title", blocks.CharBlock(required=True, max_length=40)),
+        ("title", blocks.CharBlock(required=True)),
+        ("text", blocks.TextBlock(required=True)),
+        ("ul_title", blocks.CharBlock(required=True)),
     ]
     )
      )
@@ -95,9 +95,9 @@ class LeaderBoardSection(blocks.StructBlock):
         blocks.StructBlock(
             [
                ("leader_image", ImageChooserBlock(required=True)),
-               ("leader_name", blocks.TextBlock(required=True, max_length=300)),
-               ("leader_university_name", blocks.TextBlock(required=True, max_length=300)),
-               ("leader_university_address", blocks.TextBlock(required=True, max_length=300))   
+               ("leader_name", blocks.TextBlock(required=True)),
+               ("leader_university_name", blocks.TextBlock(required=True)),
+               ("leader_university_address", blocks.TextBlock(required=True))   
     ]
     )
     )
@@ -112,10 +112,10 @@ class TestimonialSlider(blocks.StructBlock):
         blocks.StructBlock(
             [
             #    ("image", ImageChooserBlock(required=True)),
-               ("caption", blocks.TextBlock(required=True, max_length=300)),
-               ("username", blocks.TextBlock(required=True, max_length=300)),
-               ("proffesion", blocks.TextBlock(required=True, max_length=300)),
-               ("rating",blocks.TextBlock(required=True, max_length=100)),
+               ("caption", blocks.TextBlock(required=True)),
+               ("username", blocks.TextBlock(required=True)),
+               ("proffesion", blocks.TextBlock(required=True)),
+               ("rating",blocks.TextBlock(required=True)),
     ]
     )
     )
@@ -153,8 +153,8 @@ class VolunteerBlock(blocks.StructBlock):
         blocks.StructBlock(
             [
             ("icon", ImageChooserBlock(required=True)),
-            ("volunteers", blocks.TextBlock(required=True, max_length=100)),
-            ("text", blocks.TextBlock(required=True, max_length=100)),
+            ("volunteers", blocks.TextBlock(required=True)),
+            ("text", blocks.TextBlock(required=True)),
             ]
         )
     )
@@ -170,8 +170,8 @@ class DivSectionBlock(blocks.StructBlock):
     divsection= blocks.ListBlock(
         blocks.StructBlock(
             [
-                ("title", blocks.TextBlock(required=True, max_length=100)),
-                ("subtitle", blocks.TextBlock(required=True, max_length=100)),
+                ("title", blocks.TextBlock(required=True)),
+                ("subtitle", blocks.TextBlock(required=True)),
                 ("divsection_image", ImageChooserBlock(required=True)),
             ]
         )
@@ -187,12 +187,12 @@ class StudentandEducatorblock(blocks.StructBlock):
     studenteducator= blocks.ListBlock(
         blocks.StructBlock(
             [
-                ("heading_student", blocks.TextBlock(required=True, max_length=100)),
-                ("sub_heading_student", blocks.TextBlock(required=True, max_length=100)),
-                ("button_text_student", blocks.TextBlock(required=True, max_length=100)),
-                ("heading_educator", blocks.TextBlock(required=True, max_length=100)),
-                ("sub_heading_educator", blocks.TextBlock(required=True, max_length=100)),
-                ("button_text_educator", blocks.TextBlock(required=True, max_length=100)),
+                ("heading_student", blocks.TextBlock(required=True)),
+                ("sub_heading_student", blocks.TextBlock(required=True)),
+                ("button_text_student", blocks.TextBlock(required=True)),
+                ("heading_educator", blocks.TextBlock(required=True)),
+                ("sub_heading_educator", blocks.TextBlock(required=True)),
+                ("button_text_educator", blocks.TextBlock(required=True)),
 
             ]
         )
@@ -209,7 +209,7 @@ class Banner_Image_Section2(blocks.StructBlock):
         blocks.StructBlock(
             [
                 ("banner_image", ImageChooserBlock(required=True)),
-                ("banner_overlay_text", blocks.TextBlock(required=True, max_length=100)),
+                ("banner_overlay_text", blocks.TextBlock(required=True)),
 
             ]
     )
@@ -224,7 +224,13 @@ class Banner_Image_Section2(blocks.StructBlock):
 class RegisterForm(blocks.StructBlock):
     class Meta:
         template ="streams/staticform.html"
-        label="Register Form"
+        label=" Educator Register Form"
+        icon="placeholder"    
+
+class StudentForm(blocks.StructBlock):
+    class Meta:
+        template ="streams/studentform.html"
+        label=" Student Register Form"
         icon="placeholder"    
 
 
