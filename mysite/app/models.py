@@ -17,7 +17,7 @@ from wagtail.core.fields import RichTextField
 from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
-)
+)# dummy
 
 from streams import blocks
 
