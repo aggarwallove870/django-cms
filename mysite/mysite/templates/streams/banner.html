@@ -8,7 +8,7 @@
     <section class="animals-banner">
       {% for item in self.banner %}
  
-        {% image self.banner_image width-1900 as img %}
+        {% image item.banner_image width-1900 as img %}
         <div class="container " style="padding: 60px; max-width:100%; background-image: url('{{img.url}}'); background-size:cover;">
           <div class="row align-items-center">
             <div class="col-md-6">

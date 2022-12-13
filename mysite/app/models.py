@@ -18,6 +18,7 @@ from wagtail.contrib.forms.models import (
     AbstractEmailForm,
     AbstractFormField
 )
+from wagtail.contrib.modeladmin.options import ModelAdmin, modeladmin_register 
 
 from streams import blocks
 
@@ -42,7 +43,13 @@ class FlexPage(Page):
             ("banner_section_2", blocks.Banner_Image_Section2()),
             ("educator_register_form",blocks.RegisterForm()),
             ("four_div_block_2",blocks.FourdivBlock2()),
-             ("student_register_form",blocks.StudentForm()),
+            ("student_register_form",blocks.StudentForm()),
+            # ("two_column_block",blocks.TwoColumnBlock()),
+            ("verticalimagewithtext",blocks.VerticalImagewithTextBlock()),
+            ("signthispetetionform", blocks.Signthispetetionform()),         
+            ("studentprofile", blocks.StudentProfileBlock()),
+            ("studentachivment",blocks.StudentAchivmentBlock()),
+
             
    
             # ("cta",blocks.CtaBlock()),
@@ -102,3 +109,30 @@ class ContactPage(AbstractEmailForm):
 
 register_snippet(FormField)
 register_snippet(ContactPage)
+
+
+
+
+
+class RegisterForm(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email_address = models.CharField(max_length=255)
+    name_of_school = models.CharField(max_length=255)
+    grade_level = models.CharField(max_length=255)
+    state= models.CharField(max_length=255)
+    flexRadioDefault=models.CharField(max_length=200)
+
+
+class RegiisterData(ModelAdmin):
+    model = RegisterForm 
+    menu_label = "RegisterForm"  
+    menu_icon = "pick" 
+    menu_order = 200 
+    add_to_settings_menu = False 
+    exclude_from_explorer = False 
+    list_display = ("first_name",)
+    
+
+
+modeladmin_register(RegiisterData)

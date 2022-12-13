@@ -1,0 +1,32 @@
+ <!-- profile achivements start -->
+ <section class="profile-section ptb-70">
+    <div class="container site-container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="ach-head">
+            <h4 class="mb-0">Achievements</h4>
+          </div>
+        {% for i in self.achivment%}
+          <div class="three-achivements text-center">
+            <div class="achivements-points">
+              <p class="mb-0">{{i.heading_one}}</p>
+              <h3>{{i.achivment_scores_one}}+</h3>
+              <span>SIGNED</span>
+            </div>
+            <div class="achivements-points">
+              <p class="mb-0">{{i.heading_two}}</p>
+              <h3>{{i.achivment_scores_two}}+</h3>
+            </div>
+            <div class="achivements-points">
+              <p class="mb-0">{{i.heading_three}}</p>
+              <h3>{{i.achivment_scores_three}}+</h3>
+              <span>HOURS</span>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  
+        <!-- profile achivements end -->

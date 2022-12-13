@@ -75,7 +75,9 @@ body{
     font-style: normal;
     font-display: swap;
 }
-
+.profile-section .profile-image img {
+    border-radius: 20px;
+}
 
 section.four-boxes-section {
     padding-top: 50px;
@@ -137,7 +139,7 @@ header .logo-side  .navbar-nav .nav-link.active{
     font-size: 20px;
 }
 header .logo-side  ul.navbar-nav li.nav-item {
-    margin-left: 50px;
+    margin-left: 20px;
 }
 header .logo-side a.navbar-brand img {
     width: 140px;
@@ -151,7 +153,7 @@ header .logo-side a.navbar-brand img {
 /* home page css start */
 
 section.animals-section {
-    background: url(../images/youth4animalbanner.jpg);
+    /* background: url(../images/youth4animalbanner.jpg); */
     background-size: cover;
 }
 section.animals-banner {

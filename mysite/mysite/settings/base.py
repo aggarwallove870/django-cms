@@ -188,3 +188,15 @@ import mimetypes
 mimetypes.init() 
 mimetypes.types_map['.css'] = 'text/css'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DEFAULT_FROM_EMAIL = 'loveaggarwal@snakescript.com'
+SERVER_EMAIL = 'loveaggarwal@snakescript.com'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'loveaggarwal@snakescript.com'
+EMAIL_HOST_PASSWORD = 'twmocgdvkokknykp'
+EMAIL_PORT = 587
+

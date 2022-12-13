@@ -1,6 +1,6 @@
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.core.blocks import PageChooserBlock
+from wagtail.core.blocks import PageChooserBlock ,StreamBlock, StructBlock
 from wagtail.images.apps import WagtailImagesAppConfig
 
 
@@ -250,3 +250,75 @@ class FourdivBlock2(blocks.StructBlock):
         label="four_div_block_2"
         icon="placeholder"
 
+# class TwoColumnBlock(blocks.StructBlock):                                                                                     
+#     content = StructBlock(                                                                                             
+#         [
+#             ("left_column", StreamBlock([("paragraph", RichTextBlock(features=["bold", "italic"])), ("image", ImageChooserBlock())], max_num=1)), 
+#             ("right_column", StreamBlock([("paragraph", RichTextBlock(features=["bold", "italic"])), ("image", ImageChooserBlock())], max_num=1)),
+#         ]
+#     )
+
+
+class VerticalImagewithTextBlock(blocks.StructBlock):
+     vertical = blocks.ListBlock(
+        blocks.StructBlock(
+    [
+
+        ("Image", ImageChooserBlock(required=True)),
+        ("text", blocks.TextBlock(required=True)),
+    ]
+    )
+     )
+     class Meta:
+        template ="streams/verticalimagewithtext.html"
+        label="verticalimagewithtext"
+        icon="placeholder"
+    
+class Signthispetetionform(blocks.StructBlock):
+    class Meta:
+        template ="streams/signthispetetionform.html"
+        label="signthispetetionform"
+        icon="placeholder"
+
+
+class StudentProfileBlock(blocks.StructBlock):
+     profile = blocks.ListBlock(
+        blocks.StructBlock(
+    [
+
+         ("student_Image", ImageChooserBlock(required=True)),
+         ("student_name", blocks.TextBlock(required=True)),
+         ("proffesion", blocks.TextBlock(required=True)),
+         ("student_university", blocks.TextBlock(required=True)),
+         ("student_university_place", blocks.TextBlock(required=True)),
+         ("unvirsty_icon", ImageChooserBlock(required=True)),
+         ("unvirsty_country_icon", ImageChooserBlock(required=True)),
+    ]
+    )
+     )
+     class Meta:
+         template="streams/student_profile.html"
+         label="StudentBlock"
+         icon="placeholder"
+
+
+
+class StudentAchivmentBlock(blocks.StructBlock):
+     achivment = blocks.ListBlock(
+        blocks.StructBlock(
+    [
+
+         ("heading_one", blocks.TextBlock(required=True)),
+         ("achivment_scores_one", blocks.TextBlock(required=True)),
+         ("heading_two", blocks.TextBlock(required=True)),
+         ("achivment_scores_two", blocks.TextBlock(required=True)),
+         ("heading_three", blocks.TextBlock(required=True)),
+         ("achivment_scores_three", blocks.TextBlock(required=True)),
+        
+    ]
+    )
+     )
+     class Meta:
+         template="streams/student_achivments.html"
+         label="AchievementBlock"
+         icon="placeholder"

@@ -1,0 +1,87 @@
+{% load wagtailimages_tags %}
+{% comment %} <div class="container site-container">
+    <div class="row">
+    {% for i in self.vertical %}
+    <div class="col-md-7 col-lg-8">
+        <div class="sign-image">
+        {%image i.Image fill-300x200  as img  %}
+      <img src="{{img.url}}" class="img-fluid">
+    </div>
+    <div class="sign-cont">
+      <p>
+    {{i.text}}
+    
+    </p>
+      </div>
+    </div>
+{% endfor %}
+
+        </div>
+    </div> {% endcomment %}
+
+
+    <section class="sign-share-section pb-50">
+        <div class="container site-container">
+          <div class="row">
+            {% for i in self.vertical %}
+                <div class="col-md-7 col-lg-8">
+                <div class="sign-image">
+                {%image i.Image fill-300x200  as img  %}
+                <img src="{{img.url}}" class="img-fluid">
+                </div>
+                <div class="sign-cont">
+                <p>{{i.text}}
+                </p>
+                </div>
+                </div>
+           {% endfor %}
+              <div class="col-md-5 col-lg-4">
+      <div class="range-content">
+        <h5>44,745 have signed. Let’s get to 
+      500,000!</h5>
+      <input type="range" value="40" min="0" max="100" step="1" class="progress mb-3 w-100">
+      <p>At <b>500,000 signatures</b> , this petition 
+      becomes one of the <b>top signed on 
+      Youth4Animals.org</b></p>
+      <div class="sign-time-box d-flex mb-5">
+        <div class="user-img"><img src="images/user-icon.png" clas="img-fluid"></div>
+         <div class="user-name">
+           <h4>Laura van der Horst </h4>
+           <p>signed 23 hours ago</p>
+         </div>
+        </div>
+      </div>
+      <div class="sign-form">
+        <h3>Sign this petition</h3>
+        <form class="pention-form">
+          <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">First Name</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+         
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Last Name</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" >
+        </div>
+      
+      <div class="form-group">
+          <label for="exampleInputPassword1">Email Address</label>
+          <input type="email" class="form-control" id="exampleInputPassword1" >
+        </div>
+      
+        <div class="form-group">
+          <label for="exampleInputPassword1">State/Province</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" >
+        </div>
+        <button type="submit" class="btn ">Sign this petition</button>
+      </form>
+        </form>
+        </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+      <!-- sign share section end -->
+        

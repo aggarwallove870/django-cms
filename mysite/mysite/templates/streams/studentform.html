@@ -7,42 +7,43 @@
             <h2>Register Now!</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
   
-            <form class="educator-form">
+            <form method="POST" action={% url 'registerform' %} class="educator-form">
+              {% csrf_token %}
               <div class="row">
     <div class="col-12">
       <label for="exampleInputEmail1" class="form-label">First Name</label>
-      <input type="text" class="form-control" placeholder="" aria-label="First name">
+      <input type="text" class="form-control" placeholder="" name="first_name" aria-label="First name">
     </div>
     <div class="col-12">
       <label for="exampleInputEmail1" class="form-label">Last Name</label>
-      <input type="text" class="form-control" placeholder="" aria-label="Last name">
+      <input type="text" class="form-control" placeholder="" aria-label="Last name" name="last_name">
     </div>
     <div class="col-12">
       <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="text" class="form-control" placeholder="" aria-label="Last name">
+      <input type="text" class="form-control" placeholder="" aria-label="Last name" name="email_address">
     </div>
     <div class="col-12">
       <label for="exampleInputEmail1" class="form-label">Name of your school<i>(Middle School or High School)</i></label>
-      <input type="text" class="form-control" placeholder="" aria-label="Last name">
+      <input type="text" name="name_of_urschool" class="form-control" placeholder="" aria-label="Last name">
     </div>
     <div class="col-12">
       <label for="exampleInputEmail1" class="form-label">Grade Level</i></label>
-      <input type="text" class="form-control" placeholder="" aria-label="Last name">
+      <input type="text" name="grade_level" class="form-control" placeholder="" aria-label="Last name">
     </div>
     <div class="col-12">
       <label for="exampleInputEmail1" class="form-label">State/Province</i></label>
-      <input type="text" class="form-control" placeholder="" aria-label="Last name">
+      <input type="text" name="state_province" class="form-control" placeholder="" aria-label="Last name">
     </div>
-    <div class="col-12 radio-div">
+     <div class="col-12 radio-div">
       <label for="exampleInputEmail1" class="form-label">Are you registering as:</label>
       <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-    <label class="form-check-label" for="flexRadioDefault1">
+    <input class="form-check-input" type="radio" value="1" name="flexRadioDefault" id="flexRadioDefault1">
+    <label class="form-check-label" for="flexRadioefault1">
       An Individual ____
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <input class="form-check-input" type="radio"  value="2" name="flexRadioDefault" id="flexRadioDefault2">
     <label class="form-check-label" for="flexRadioDefault2">
     As a Team or Student Club Leader- ___ Form a team of at
   least 4 other members and you receive credit for your own
@@ -52,7 +53,7 @@
   </div>
   
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <input class="form-check-input" type="radio" value="3" name="flexRadioDefault" id="flexRadioDefault3">
     <label class="form-check-label" for="flexRadioDefault2">
     As a Challenge Leader ____ This is the competitive level
   where you compete against other Team Leaders from across
@@ -67,9 +68,10 @@
   email complete with simple tutorials with the mosteffective methods of 
   accomplishing each project. These projects are sent every _______ 
     </p>
-  </div>
+  </div> 
   <div class="col-12">
-    <input type="submit" value="SUBMIT">
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {% comment %} <input type="submit" value="SUBMIT"> {% endcomment %}
     </div>
   </div>
             </form>

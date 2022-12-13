@@ -1,0 +1,33 @@
+<!-- profile section start -->
+
+{% load wagtailimages_tags %}
+<section class="profile-section ptb-70">
+    <div class="container site-container">
+      <div class="row justify-content-center align-items-center" >
+    {% for i in self.profile %}
+        <div class="col-md-4">
+          <div class="profile-image">
+            {%image i.student_Image fill-100x100 as img  %}
+            <img src="{{img.url}}" class="card-img-top" alt="{{ img.alt }}">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="profile-content">
+            <h2>{{ i.student_name }}</h2>
+            <p>{{ i.proffesion }}</p>
+            <div class="mb-3">
+             {%image i.unvirsty_icon fill-100x100 as img  %}
+              <img src="{{img.url}}" class="img-fluid">
+              <span class="ms-2">{{i.student_university}}</span>
+            </div>
+            <div class="mb-3">
+              {%image i.unvirsty_country_icon fill-100x100 as img  %}
+              <img src="{{img.url}}" class="img-fluid">
+              <span class="ms-2">{{ i.student_university_place }}</span>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+      </div>
+    </div>
+  </section>
