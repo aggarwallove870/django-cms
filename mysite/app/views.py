@@ -29,4 +29,4 @@ def registerform(request):
 
         print(from_email,"------++++_____")
 
-        return redirect('http://127.0.0.1:8000/student/')
+        return redirect('http://68.183.194.137//student/')
