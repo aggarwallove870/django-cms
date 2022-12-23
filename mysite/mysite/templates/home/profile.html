@@ -1,0 +1,153 @@
+{% extends "home/base.html" %}
+
+<!-- profile section start -->
+
+{% comment %} {% load wagtailimages_tags %}
+<section class="profile-section ptb-70">
+    <div class="container site-container">
+      <div class="row justify-content-center align-items-center" >
+
+        <div class="col-md-4">
+          <div class="profile-image">
+            {%image obj.leader_image fill-300x300 as img  %}
+            <img src="{{img.url}}" class="card-img-top" alt="{{ img.alt }}">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="profile-content">
+            <h2>{{ obj.leader_name }}</h2>
+            {% comment %} <p>{{ iobj.proffesion }}</p> 
+            <div class="mb-3">
+             {% comment %} {%image i.unvirsty_icon fill-100x100 as img  %}
+              <img src="{{img.url}}" class="img-fluid"> 
+              <span class="ms-2">{{obj.leader_university_name}}</span>
+            </div>
+            <div class="mb-3">
+              {% comment %} {%image i.unvirsty_country_icon fill-100x100 as img  %}
+              <img src="{{img.url}}" class="img-fluid"> 
+              <span class="ms-2">{{ obj.leader_university_address }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> {% endcomment %}
+
+
+  {% load static %}
+  {% load wagtailcore_tags %}
+  {% load wagtailimages_tags %}
+  
+  {% block body_class %}template-homepage{% endblock %}
+  
+  
+  
+  {% block extra_css %}
+  
+  {% comment %}
+  Delete the line below if you're just getting started and want to remove the welcome screen!
+  {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  
+  {% endblock extra_css %} 
+  
+  {% block content %}
+    <!-- header end -->
+  <!-- profile section start -->
+<section class="profile-section ptb-70">
+  <div class="container site-container">
+    <div class="row justify-content-center align-items-center" >
+      <div class="col-md-4">
+        <div class="profile-image">
+            {%image obj.leader_image fill-300x200 as img  %}
+          <img src="{{img.url}}" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="profile-content">
+          <h2>{{obj.leader_name}}</h2>
+          <p>STUDENT</p>
+          <div class="mb-3">
+            <img src="{% static 'images/university-icon.png' %}" class="img-fluid">
+            <span class="ms-2">{{obj.leader_university_name}}</span>
+          </div>
+          <div class="mb-3">
+            <img src="{% static 'images/country-icon.png' %}" class="img-fluid">
+            <span class="ms-2">{{obj.leader_university_name}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- profile section end -->
+
+    <!-- profile achivements start -->
+    <section class="profile-section ptb-70">
+  <div class="container site-container">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class="ach-head">
+          <h4 class="mb-0">Achievements</h4>
+        </div>
+        <div class="three-achivements text-center">
+          <div class="achivements-points">
+            <p class="mb-0">SIGNATURES</p>
+            <h3>50,000+</h3>
+            <span>SIGNED</span>
+          </div>
+          <div class="achivements-points">
+            <p class="mb-0">Assignments</p>
+            <h3>100+</h3>
+          </div>
+          <div class="achivements-points">
+            <p class="mb-0">VOLUNTEER HOURS</p>
+            <h3>1000+</h3>
+            <span>HOURS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- profile achivements end -->
+
+  <!-- educator para  section start -->
+<section class="educator-content pb-50">
+  <div class="container site-container">
+    <div class="row">
+      <div class="col-12">
+        <div class="content">
+          <p class="content-para">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy 
+text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by 
+injected humour, or randomised words which don't look even slightly believable.</p>
+ <p class="content-para">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy 
+text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+ <p class="content-para">
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standard dummy 
+text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by 
+injected humour, or randomised words which don't look even slightly believable. Lorem Ipsum is simply dummy text of the 
+printing and typesetting industry. Lorem Ipsum has been the standard dummy text ever since the 1500s, when an unknown 
+printer took a galley of type and scrambled it to make a type specimen book.There are many variations of passages of 
+Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words 
+which don't look even slightly believable.</p>
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- educator para section end -->
+{% include 'streams/footer.html' %}
+  {% endblock content %}
+  

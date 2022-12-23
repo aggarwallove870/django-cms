@@ -4,6 +4,7 @@ from app.models import *
 from django.conf import settings
 # from django.core.mail import EmailMessage
 from django.core.mail import send_mail
+from home.models import *
 def registerform(request):
     
     if request.method =="POST":
@@ -30,3 +31,8 @@ def registerform(request):
         print(from_email,"------++++_____")
 
         return redirect('http://68.183.194.137/student/')
+
+
+def profile(request,id):
+    obj=Leaderboard.objects.get(id=id)
+    return render(request,'home/profile.html',{'obj':obj})

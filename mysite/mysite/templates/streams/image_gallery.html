@@ -1,9 +1,10 @@
 {% load wagtailimages_tags %}
+
 <section class="leaderboard">
     <div class="container site-container">
             <h3 class="mb-4">Leaderboard</h3>
       <div class="row">
-        {% for i in self.carousel_field %}
+        {% for i in self.imgglry %}
         <div class="col-md-4 col-lg-3">
         <div class="leaders">
             {%image card.image fill-300x200 as img  %}

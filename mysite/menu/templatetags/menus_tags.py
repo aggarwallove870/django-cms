@@ -1,7 +1,8 @@
 from django import template
 
 from ..models import Menu , NavbarLogo , Footer
-
+from home.models import Leaderboard
+from django.template.response import TemplateResponse
 register = template.Library()
 
 
@@ -17,3 +18,9 @@ def navbarlogo():
 @register.simple_tag()
 def footer():
     return Footer.objects.last()
+
+@register.simple_tag()
+# @register.inclusion_tag('streams/student_profile.html')
+def leaderboard():
+    return Leaderboard.objects.all()
+    

@@ -1,13 +1,14 @@
 from django.conf import settings
 from django.urls import include, path
 from django.contrib import admin
-
+from menu.templatetags.menus_tags import leaderboard
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
 from app import views 
+from app.views import profile
 
 urlpatterns = [
     path("django-admin/", admin.site.urls),
@@ -15,6 +16,8 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     path("registerform/", views.registerform, name="registerform"),
+    path("profile/<int:id>/",views.profile,name="profile"),
+   
 ]
 
 

@@ -91,16 +91,7 @@ class FooterBlock(blocks.StructBlock):
         icon="placeholder"
 
 class LeaderBoardSection(blocks.StructBlock):
-    leaderboardsection= blocks.ListBlock(
-        blocks.StructBlock(
-            [
-               ("leader_image", ImageChooserBlock(required=True)),
-               ("leader_name", blocks.TextBlock(required=True)),
-               ("leader_university_name", blocks.TextBlock(required=True)),
-               ("leader_university_address", blocks.TextBlock(required=True))   
-    ]
-    )
-    )
+    
     class Meta:
         template ="streams/leader_board.html"
         label="leaderboard_section"
@@ -281,25 +272,26 @@ class Signthispetetionform(blocks.StructBlock):
         icon="placeholder"
 
 
-class StudentProfileBlock(blocks.StructBlock):
-     profile = blocks.ListBlock(
-        blocks.StructBlock(
-    [
+# class StudentProfileBlock(blocks.StructBlock):
 
-         ("student_Image", ImageChooserBlock(required=True)),
-         ("student_name", blocks.TextBlock(required=True)),
-         ("proffesion", blocks.TextBlock(required=True)),
-         ("student_university", blocks.TextBlock(required=True)),
-         ("student_university_place", blocks.TextBlock(required=True)),
-         ("unvirsty_icon", ImageChooserBlock(required=True)),
-         ("unvirsty_country_icon", ImageChooserBlock(required=True)),
-    ]
-    )
-     )
-     class Meta:
-         template="streams/student_profile.html"
-         label="StudentBlock"
-         icon="placeholder"
+#      profile = blocks.ListBlock(
+#         blocks.StructBlock(
+#     [
+
+#          ("student_Image", ImageChooserBlock(required=True)),
+#          ("student_name", blocks.TextBlock(required=True)),
+#          ("proffesion", blocks.TextBlock(required=True)),
+#          ("student_university", blocks.TextBlock(required=True)),
+#          ("student_university_place", blocks.TextBlock(required=True)),
+#          ("unvirsty_icon", ImageChooserBlock(required=True)),
+#          ("unvirsty_country_icon", ImageChooserBlock(required=True)),
+#     ]
+#     )
+#      )
+#      class Meta:
+#          template="streams/student_profile.html"
+#          label="StudentBlock"
+#          icon="placeholder"
 
 
 

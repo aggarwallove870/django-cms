@@ -1,4 +1,5 @@
 {% load wagtailimages_tags %}
+{% load static %}
 {% comment %} <div class="container site-container">
     <div class="row">
     {% for i in self.vertical %}
@@ -44,7 +45,7 @@
       becomes one of the <b>top signed on 
       Youth4Animals.org</b></p>
       <div class="sign-time-box d-flex mb-5">
-        <div class="user-img"><img src="images/user-icon.png" clas="img-fluid"></div>
+        <div class="user-img"><img src="{% static 'images/user-icon.png' %}" clas="img-fluid"></div>
          <div class="user-name">
            <h4>Laura van der Horst </h4>
            <p>signed 23 hours ago</p>

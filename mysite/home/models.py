@@ -63,7 +63,7 @@ class Leaderboard(models.Model):
 
 
     class Meta:
-            verbose_name = "Image Gallery"
+            verbose_name = "ImageGallery"
 
 
     

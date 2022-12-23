@@ -47,7 +47,7 @@ class FlexPage(Page):
             # ("two_column_block",blocks.TwoColumnBlock()),
             ("verticalimagewithtext",blocks.VerticalImagewithTextBlock()),
             ("signthispetetionform", blocks.Signthispetetionform()),         
-            ("studentprofile", blocks.StudentProfileBlock()),
+            # ("studentprofile", blocks.StudentProfileBlock()),
             ("studentachivment",blocks.StudentAchivmentBlock()),
 
             
@@ -136,3 +136,10 @@ class RegiisterData(ModelAdmin):
 
 
 modeladmin_register(RegiisterData)
+
+
+
+
+
+
+
