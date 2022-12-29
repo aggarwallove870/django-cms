@@ -105,7 +105,7 @@ class Menu(ClusterableModel):
             FieldPanel("title"),
             FieldPanel("slug"),
         ], heading="Menu"),
-        InlinePanel("menu_items", label="Menu Item")
+        InlinePanel("menu_items", label="MenuItem")
     ]
 
     def __str__(self):

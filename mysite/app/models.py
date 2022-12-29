@@ -24,6 +24,22 @@ from streams import blocks
 
 # Create y our models here.
 
+
+class ServicesPage(Page):
+
+    template = "app/flex_page.html"
+    max_count = 1     
+    subpage_types = []
+    menu_order = models.IntegerField(default = 0, help_text = "Setup custom menu order")
+
+    promote_panels = Page.promote_panels + [
+       FieldPanel('menu_order'),
+   ]
+    class Meta:
+        verbose_name = "Services"
+        verbose_name_plural = "Services"
+
+
 class FlexPage(Page):
     template= "app/flex_page.html"
     content = StreamField(
@@ -136,6 +152,7 @@ class RegiisterData(ModelAdmin):
 
 
 modeladmin_register(RegiisterData)
+
 
 
 

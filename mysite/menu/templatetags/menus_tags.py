@@ -1,6 +1,6 @@
 from django import template
 
-from ..models import Menu , NavbarLogo , Footer
+from ..models import Menu , NavbarLogo , Footer, MenuItem
 from home.models import Leaderboard
 from django.template.response import TemplateResponse
 register = template.Library()
@@ -13,7 +13,7 @@ def get_menu(slug):
 
 @register.simple_tag()
 def navbarlogo():
-    return NavbarLogo.objects.first()
+    return NavbarLogo.objects.last()
 
 @register.simple_tag()
 def footer():
