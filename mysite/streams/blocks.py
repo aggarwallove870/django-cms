@@ -42,18 +42,18 @@ class CardBlock(blocks.StructBlock):
         label="staff cards"
 
 class FourdivBlock(blocks.StructBlock):
-     cards = blocks.ListBlock(
-        blocks.StructBlock(
-    [
+    #  cards = blocks.ListBlock(
+    #     blocks.StructBlock(
+    # [
 
-        ("Image", ImageChooserBlock(required=True)),
-        ("title", blocks.CharBlock(required=True)),
-        ("text", blocks.TextBlock(required=True)),
-    ]
-    )
-     )
+    #     ("Image", ImageChooserBlock(required=True)),
+    #     ("title", blocks.CharBlock(required=True)),
+    #     ("text", blocks.TextBlock(required=True)),
+    # ]
+    # )
+    #  )
      class Meta:
-        template ="streams/four_div_block.html"
+        template ="streams/four_div_block_2.html"
         label="four_div_block"
         icon="placeholder"
 

@@ -43,6 +43,7 @@ class Leaderboard(models.Model):
     leader_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL, null=True, blank=True, related_name="+")
     leader_university_name=models.CharField(max_length=100,null=True,blank=True)
     leader_university_address=models.CharField(max_length=100,null=True,blank=True)
+    is_showing = models.BooleanField(default=False)
 
 
             
@@ -53,6 +54,7 @@ class Leaderboard(models.Model):
             ImageChooserPanel('leader_image'),
             FieldPanel('leader_university_name'),
             FieldPanel('leader_university_address'),
+             FieldPanel('is_showing'),
     ],
     heading = 'Leaderborad-Detail',
     )
@@ -63,7 +65,7 @@ class Leaderboard(models.Model):
 
 
     class Meta:
-            verbose_name = "ImageGallery"
+            verbose_name = "LeaderBoard_Section"
 
 
     
@@ -191,13 +193,7 @@ class HomePage(Page):
         ImageChooserPanel("volunteers_box4_image_section_2"),
         FieldPanel("volunteers_box4_text_section_2"),
         InlinePanel('carousel_items', label="Carousel Items"),
-        # FieldRowPanel([
-        #     FieldPanel("volunteers_box2_text_section_2"),
-        #     FieldPanel("volunteers_box3_section_2"),
-        
-        # ]),
 
-        # StreamFieldPanel('carousel_field'),      
 
     ]
 

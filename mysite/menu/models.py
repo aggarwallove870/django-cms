@@ -161,5 +161,24 @@ class Footer(Orderable):
 def __str__(self):
     return self.footer_icon_title
    
+@register_snippet
+class FourDivSection(models.Model):
+    icon = models.ForeignKey(
+        "wagtailimages.Image",
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="+"
+    
+    )
+    title = models.CharField(max_length=255)
+    text=models.CharField(max_length=255)
 
-   
+    panels = [
+        ImageChooserPanel('icon'),
+        FieldPanel('title'),
+        FieldPanel('text'),
+    ]
+
+    def __str__(self):
+        return self.text

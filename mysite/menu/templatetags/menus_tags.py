@@ -1,6 +1,6 @@
 from django import template
 
-from ..models import Menu , NavbarLogo , Footer, MenuItem
+from ..models import Menu , NavbarLogo , Footer, MenuItem, FourDivSection
 from home.models import Leaderboard
 from django.template.response import TemplateResponse
 register = template.Library()
@@ -24,3 +24,8 @@ def footer():
 def leaderboard():
     return Leaderboard.objects.all()
     
+@register.simple_tag()
+def cards():
+    return FourDivSection.objects.all()
+        
+

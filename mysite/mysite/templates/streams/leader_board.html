@@ -54,17 +54,23 @@ section.leaderboard-circle {
       <div class="row">
         
         {% for name in leaderboard %}
+        {% if name.is_showing == True %}
         <div class="col-md-4 col-lg-3 ">
           <div class="leaders">
             <input type="hidden" name="leaderboard" value="{{name.id}}"</input>
             {%image name.leader_image fill-300x200 as img  %}
-          <a href="profile/{{name.id}}/"><img src="{{img.url}}" class="img-fluid"> </a>
+          <a href="/profile/{{name.id}}/"><img src="{{img.url}}" class="img-fluid"> </a>
           <h5 class="leader-name  mt-4">{{name.leader_name}}
           </h5>
           <p class="university">{{name.leader_university_name}} </p>
           <p class="university second">{{name.leader_university_address}}</p>
+    
           </div>
           </div>
+          {% else %}
+          
+          {% endif %}
+        
   
       {% endfor %}
       {% comment %} {% for mnnu in menumy %}
