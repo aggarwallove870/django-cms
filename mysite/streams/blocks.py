@@ -2,6 +2,7 @@ from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 from wagtail.core.blocks import PageChooserBlock ,StreamBlock, StructBlock
 from wagtail.images.apps import WagtailImagesAppConfig
+from wagtail.core.blocks import RawHTMLBlock
 
 
   
@@ -14,7 +15,9 @@ class TitleAndTextBlock(blocks.StructBlock):
         label= "Title and Text"
 
 
-class RichTextBlock(blocks.RichTextBlock):
+class RichTextBlock(blocks.StructBlock):
+    
+    html = blocks.RawHTMLBlock()
     class Meta:
         template="streams/richtext.html"
         icon="edit"

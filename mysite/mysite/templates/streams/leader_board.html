@@ -5,7 +5,10 @@
 {% load menus_tags %}
 {% leaderboard as leaderboard %}
 
-
+{% get_site_root as geturl %}
+{% load wagtailcore_tags %}
+{% url 'wagtail_serve' '' as myurl %}
+{% wagtail_site as current_site %}
 
   
     <style>
@@ -47,13 +50,25 @@ section.leaderboard-circle {
 }  
 
     </style>
-<section class="leaderboard" style="background-image:{% static 'images/yellow-bg.png' %};">
+
+  
+
+
+
+
+<section class="leaderboard" style="background-image:{% static 'images/yellow-bg.png' %};">  
+  {% if geturl == True %}
   <section class="leaderboard-circle">
+  {% else %}
+  <section class="">
+    {% endif %}
+
     <div class="container site-container">
             <h3 class="mb-4">Leaderboard</h3>
       <div class="row">
         
         {% for name in leaderboard %}
+   
         {% if name.is_showing == True %}
         <div class="col-md-4 col-lg-3 ">
           <div class="leaders">
@@ -62,8 +77,13 @@ section.leaderboard-circle {
           <a href="/profile/{{name.id}}/"><img src="{{img.url}}" class="img-fluid"> </a>
           <h5 class="leader-name  mt-4">{{name.leader_name}}
           </h5>
+          {% if geturl == True %}
           <p class="university">{{name.leader_university_name}} </p>
           <p class="university second">{{name.leader_university_address}}</p>
+          {% else %}
+          <p class="university" style="color:black;">{{name.leader_university_name}} </p>
+          <p class="university second" style="color:black;">{{name.leader_university_address}}</p>
+          {% endif %}
     
           </div>
           </div>
