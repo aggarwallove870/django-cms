@@ -3,6 +3,7 @@ from django import template
 from ..models import Menu , NavbarLogo , Footer, MenuItem, FourDivSection
 from home.models import Leaderboard
 from django.template.response import TemplateResponse
+from app.models import Signandshareform
 from wagtail.core.models import Page, Site
 register = template.Library()
 
@@ -39,6 +40,15 @@ def get_site_root(context):
         return True
     else:
         return False
+
+@register.simple_tag(takes_context=True)
+def petition_count(context):
+    try:
+        petition_count=Signandshareform.objects.filter().last()
+        count=int(petition_count.count)
+    except:
+        count=0
+    return count
     
 
 

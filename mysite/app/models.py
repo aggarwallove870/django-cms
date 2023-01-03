@@ -140,6 +140,7 @@ class RegisterForm(models.Model):
     flexRadioDefault=models.CharField(max_length=200)
 
 
+
 class RegiisterData(ModelAdmin):
     model = RegisterForm 
     menu_label = "RegisterForm"  
@@ -154,7 +155,26 @@ class RegiisterData(ModelAdmin):
 modeladmin_register(RegiisterData)
 
 
+class Signandshareform(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name= models.CharField(max_length=255)
+    email_address= models.EmailField(max_length=244)
+    state= models.CharField(max_length=255)
+    count=models.CharField(max_length=10000000)
 
+
+
+class SignansShareData(ModelAdmin):
+    model = Signandshareform 
+    menu_label = "SignandShare"  
+    menu_icon = "share" 
+    menu_order = 200 
+    add_to_settings_menu = False 
+    exclude_from_explorer = False 
+    list_display = ("first_name","last_name","email_address","state")
+
+
+modeladmin_register(SignansShareData)
 
 
 

@@ -1,5 +1,7 @@
 {% load wagtailimages_tags %}
 {% load static %}
+{% load menus_tags %}
+{% petition_count as count %}
 {% comment %} <div class="container site-container">
     <div class="row">
     {% for i in self.vertical %}
@@ -38,9 +40,9 @@
            {% endfor %}
               <div class="col-md-5 col-lg-4">
       <div class="range-content">
-        <h5>44,745 have signed. Let’s get to 
+        <h5>{{count}} have signed. Let’s get to 
       500,000!</h5>
-      <input type="range" value="40" min="0" max="100" step="1" class="progress mb-3 w-100">
+      <input type="range" value="{{count}}" min="0" max="500000"  step="1" class="progress mb-3 w-100">
       <p>At <b>500,000 signatures</b> , this petition 
       becomes one of the <b>top signed on 
       Youth4Animals.org</b></p>
@@ -54,30 +56,30 @@
       </div>
       <div class="sign-form">
         <h3>Sign this petition</h3>
-        <form class="pention-form">
-          <form>
+        <form method="POST" action={% url 'signandshre' %} class="educator-form">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" name="first_name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+            
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Last Name</label>
+            <input type="text" name="last_name" class="form-control" id="exampleInputPassword1" >
+          </div>
+        
         <div class="form-group">
-          <label for="exampleInputEmail1">First Name</label>
-          <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-         
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Last Name</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" >
-        </div>
-      
-      <div class="form-group">
-          <label for="exampleInputPassword1">Email Address</label>
-          <input type="email" class="form-control" id="exampleInputPassword1" >
-        </div>
-      
-        <div class="form-group">
-          <label for="exampleInputPassword1">State/Province</label>
-          <input type="text" class="form-control" id="exampleInputPassword1" >
-        </div>
-        <button type="submit" class="btn ">Sign this petition</button>
+            <label for="exampleInputPassword1">Email Address</label>
+            <input type="email" name="email_address" class="form-control" id="exampleInputPassword1" >
+          </div>
+        
+          <div class="form-group">
+            <label for="exampleInputPassword1">State/Province</label>
+            <input type="text" name="state" class="form-control" id="exampleInputPassword1" >
+          </div>
+          <button type="submit" class="btn ">Sign this petition</button>
       </form>
-        </form>
+  
         </div>
               </div>
             </div>

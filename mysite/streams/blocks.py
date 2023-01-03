@@ -16,7 +16,11 @@ class TitleAndTextBlock(blocks.StructBlock):
 
 
 class RichTextBlock(blocks.StructBlock):
-    
+    caption = blocks.RichTextBlock(
+    required=False,
+    label='Caption',
+  
+)
     html = blocks.RawHTMLBlock()
     class Meta:
         template="streams/richtext.html"
@@ -244,14 +248,6 @@ class FourdivBlock2(blocks.StructBlock):
         label="four_div_block_2"
         icon="placeholder"
 
-# class TwoColumnBlock(blocks.StructBlock):                                                                                     
-#     content = StructBlock(                                                                                             
-#         [
-#             ("left_column", StreamBlock([("paragraph", RichTextBlock(features=["bold", "italic"])), ("image", ImageChooserBlock())], max_num=1)), 
-#             ("right_column", StreamBlock([("paragraph", RichTextBlock(features=["bold", "italic"])), ("image", ImageChooserBlock())], max_num=1)),
-#         ]
-#     )
-
 
 class VerticalImagewithTextBlock(blocks.StructBlock):
      vertical = blocks.ListBlock(
@@ -317,3 +313,17 @@ class StudentAchivmentBlock(blocks.StructBlock):
          template="streams/student_achivments.html"
          label="AchievementBlock"
          icon="placeholder"
+
+WAGTAILADMIN_RICH_TEXT_EDITORS = {
+    'default': {
+        'WIDGET': 'wagtail.admin.rich_text.DraftailRichTextArea',
+        # since sub, super, and a couple more are not included by default, we need to add them in this config
+        'OPTIONS': {'features': ['bold', 'italic', 'superscript', 'subscript', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'ol', 'ul',
+                        'hr', 'blockquote', 'pre', 'link', 'embed', 'document-link', 'image']}
+    },
+    'minimal': {
+        'OPTIONS': {
+            'features': ['bold', 'italic', 'subscript', 'superscript', 'link']
+        }
+    }
+}
