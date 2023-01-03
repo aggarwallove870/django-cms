@@ -61,5 +61,5 @@ def signandshre(request):
         
         print(count_data,"--------------------------------")
 
-    return redirect('http://127.0.0.1:8000/sign-and-share/')
+    return redirect('http://68.183.194.137/sign-and-share/')
 
