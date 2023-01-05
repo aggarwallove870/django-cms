@@ -11,13 +11,29 @@
 {% wagtail_site as current_site %}
 
   
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Load more function Example:2
+    </title>
+
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js">
+    </script>
+
     <style>
-       
+
         .block {
             display: none;
             font-size: 20px;
         }
-  
+
         #load {
             font-size: 20px;
             color: green;
@@ -50,28 +66,29 @@ section.leaderboard-circle {
 }  
 
     </style>
-
   
 
 
 
 
-<section class="leaderboard" style="background-image:{% static 'images/yellow-bg.png' %};">  
+  
   {% if geturl == True %}
+  <section class="leaderboard" style="background-image:{% static 'images/yellow-bg.png' %};">
   <section class="leaderboard-circle">
   {% else %}
+  <section class="" style="background-image:{% static 'images/yellow-bg.png' %};">
   <section class="">
     {% endif %}
 
     <div class="container site-container">
-            <h3 class="mb-4">Leaderboard</h3>
+            <h3 class="mb-4" style="text-align:center">Leaderboard</h3>
       <div class="row">
         
         {% for name in leaderboard %}
    
         {% if name.is_showing == True %}
-        <div class="col-md-4 col-lg-3 ">
-          <div class="leaders">
+        <div class="col-md-4 col-lg-3 " style="cu" onclick='location.href="/profile/{{name.id}}/"'>
+          <div class="leaders block">
             <input type="hidden" name="leaderboard" value="{{name.id}}"</input>
             {%image name.leader_image fill-300x200 as img  %}
           <a href="/profile/{{name.id}}/"><img src="{{img.url}}" class="img-fluid"> </a>
@@ -94,9 +111,7 @@ section.leaderboard-circle {
         
   
       {% endfor %}
-      {% comment %} {% for mnnu in menumy %}
-      {{mnnu.link_title}}
-      {% endfor %} {% endcomment %}
+  
       </div>
 
   

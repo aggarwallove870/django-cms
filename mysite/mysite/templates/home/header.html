@@ -1,56 +1,33 @@
+{% load menus_tags %}
+{% load menu_tags %}
 
-
- {% comment %} <style>
-    nav.navbar.navbar-expand-lg.shadow-sm.p-3 {
-        background: yellow;
-    }
-    
-</style> {% endcomment %}
- {% load menu_tags %}
- {% load wagtailcore_tags menu_tags %}
-
-
- 
-
-    {% comment %} {% main_menu max_levels=4 template="home/main_menu.html" %}  {% endcomment %}
-  
-  
-    {% comment %} <div class="donate-button-side">
-      <a href="" class="donate-button text-decoration-none">
-        DONATE
-      </a>
-    </div> {% endcomment %}
-
-  <!-- header end -->
-
-
-
-
-  {% comment %} <div class="row">
-    {% footer_menus as menus %}
-    {% for menu in menus %}
-      <div class="col-md-4 {% if for.counter == 0 %} offset-md-4 {% endif %}">
-        <h4>{{menu.heading}}</h4>
-        {% flat_menu menu.handle template="home/footer_menu.html" %}
-      </div>
-    {% endfor %}
-  </div> {% endcomment %}
-  
-
-
+{% load static wagtailcore_tags wagtailuserbar %} 
+{% navbarlogo as logo %}
+{% load wagtailimages_tags %}
 <style>
     nav.navbar.navbar-expand-lg.shadow-sm.p-3 {
         background: yellow;
     }
-    
+
 </style>
 
 <header>
     <div class="logo-side">
-   
-      {% main_menu max_levels=4 template="home/main_menu.html" %} 
-      
-   
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            {% image logo.logo fill-400x200  %}</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+            {% main_menu max_levels=4 template="home/main_menu.html" %} 
+
+          </div>
+        </div>
+        </nav>
+           
     </div>
     <div class="donate-button-side">
       <a href="" class="donate-button text-decoration-none">
@@ -58,6 +35,4 @@
       </a>
     </div>
   </header>
-
-
   <!-- header end -->

@@ -1,6 +1,6 @@
 from django import template
 
-from ..models import Menu , NavbarLogo , Footer, MenuItem, FourDivSection
+from ..models import Menu , NavbarLogo , Footer, MenuItem, FourDivSection,Ck_editor
 from home.models import Leaderboard
 from django.template.response import TemplateResponse
 from app.models import Signandshareform
@@ -52,6 +52,8 @@ def petition_count(context):
     
 
 
+@register.simple_tag()
+def ck_editor():
+    pass
     
- 
 

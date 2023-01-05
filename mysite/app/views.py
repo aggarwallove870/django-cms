@@ -30,7 +30,35 @@ def registerform(request):
 
         print(from_email,"------++++_____")
 
-        return redirect('http://68.183.194.137/student/')
+        return redirect('http://68.183.194.137/register/student/')
+
+def educatorform(request):
+    
+    if request.method =="POST":
+        first_name = request.POST.get('first_name')
+        print(first_name)
+        last_name = request.POST.get('last_name')
+        print(last_name)
+        email=  request.POST.get('email_address')
+        print(email,"-------HERE")
+        name_of_school= request.POST.get('name_of_school')
+        print(name_of_school)
+        grade_level = request.POST.get('grade_level')
+        print(grade_level)
+        areyoua= request.POST.get('areyoua')
+        print(areyoua)
+        obj = EducatorForm(first_name=first_name, last_name=last_name, email_address=email,name_of_school=name_of_school,grade_level=grade_level, areyoua=areyoua)
+        obj.save()
+        subject ="Thankyou for Register"
+        message = "You are successfully registered"
+        print("--------")
+        from_email = settings.EMAIL_HOST_USER
+        
+        send_mail(subject, message, "loveaggarwal@snakescript.com", [email],fail_silently=True)
+
+        print(from_email,"------++++_____")
+
+        return redirect('http://68.183.194.137/register/educators/')
 
 
 def profile(request,id):

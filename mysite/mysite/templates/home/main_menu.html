@@ -4,19 +4,31 @@
 
 {% load wagtailimages_tags %}
 
+<style>
+  .logo-side .list-unstyled .dropdown-menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .logo-side .list-unstyled .dropdown-menu ul li {
+      list-style: none;
+  }
+  .logo-side .list-unstyled .dropdown-menu ul {
+    padding: 10px 20px;
+    margin: 0;
+    background: #ffd100;
+  }
+  .logo-side .list-unstyled ul.dropdown-menu.show {
+    padding: 0;
+    border: unset;
+  }
+</style>
 {% comment %} {% navbarlogo as logo %} {% endcomment %}
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        {% image logo.logo fill-300x100  %}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
     {% for item in menu_items %}
-    <ul class="list-unstyled" style="margin-right:40px; margin-left:40px">
+    <ul class="list-unstyled p-3" >
         {% if item.has_children_in_menu %}
-        <li class="nav-item dropdown mr-5 ml-5">
+        <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="{{ item.href }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 {{ item.text }}
             </a>
@@ -38,10 +50,7 @@
 
 
       {% endfor %}
-    </div>
-</div>
-</nav>
-      
+       
 
 
 

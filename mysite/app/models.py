@@ -58,13 +58,14 @@ class FlexPage(Page):
             ("studentandeducator", blocks.StudentandEducatorblock()),
             ("banner_section_2", blocks.Banner_Image_Section2()),
             ("educator_register_form",blocks.RegisterForm()),
-            ("four_div_block_2",blocks.FourdivBlock2()),
+            # ("four_div_block_2",blocks.FourdivBlock2()),
             ("student_register_form",blocks.StudentForm()),
             # ("two_column_block",blocks.TwoColumnBlock()),
             ("verticalimagewithtext",blocks.VerticalImagewithTextBlock()),
             ("signthispetetionform", blocks.Signthispetetionform()),         
             # ("studentprofile", blocks.StudentProfileBlock()),
             ("studentachivment",blocks.StudentAchivmentBlock()),
+            ("CustomHtml", blocks.CustomHtml()),
 
             
    
@@ -177,6 +178,29 @@ class SignansShareData(ModelAdmin):
 modeladmin_register(SignansShareData)
 
 
+
+class EducatorForm(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email_address = models.CharField(max_length=255)
+    name_of_school = models.CharField(max_length=255)
+    grade_level = models.CharField(max_length=255)
+    areyoua=models.CharField(max_length=200)
+
+
+
+class EducatorFormData(ModelAdmin):
+    model = EducatorForm 
+    menu_label = "EducatorForm"  
+    menu_icon = "pick" 
+    menu_order = 200 
+    add_to_settings_menu = False 
+    exclude_from_explorer = False 
+    list_display = ("first_name",)
+    
+
+
+modeladmin_register(EducatorFormData)
 
 
 

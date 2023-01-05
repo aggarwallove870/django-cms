@@ -3,7 +3,9 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtail.core.blocks import PageChooserBlock ,StreamBlock, StructBlock
 from wagtail.images.apps import WagtailImagesAppConfig
 from wagtail.core.blocks import RawHTMLBlock
-
+from ckeditor.fields import RichTextField
+from menu.models import Ck_editor
+from django import forms
 
   
 class TitleAndTextBlock(blocks.StructBlock):
@@ -21,12 +23,21 @@ class RichTextBlock(blocks.StructBlock):
     label='Caption',
   
 )
-    html = blocks.RawHTMLBlock()
+    # html = blocks.RawHTMLBlock()
     class Meta:
         template="streams/richtext.html"
         icon="edit"
         label="RichTextBlock"
 
+
+class CustomHtml(blocks.StructBlock):
+    editor=blocks.TextBlock(required=True)
+    class Meta:
+        template="streams/ckeditor.html"
+        icon="edit"
+        label="Custom HTML Editor"
+
+    
 
 class CardBlock(blocks.StructBlock):
     title=blocks.CharBlock(required=True,help_text="Add your Title")
@@ -232,22 +243,6 @@ class StudentForm(blocks.StructBlock):
         icon="placeholder"    
 
 
-class FourdivBlock2(blocks.StructBlock):
-     cards = blocks.ListBlock(
-        blocks.StructBlock(
-    [
-
-        ("Image", ImageChooserBlock(required=True)),
-        ("title", blocks.CharBlock(required=True)),
-        ("text", blocks.TextBlock(required=True)),
-    ]
-    )
-     )
-     class Meta:
-        template ="streams/four_div_block_2.html"
-        label="four_div_block_2"
-        icon="placeholder"
-
 
 class VerticalImagewithTextBlock(blocks.StructBlock):
      vertical = blocks.ListBlock(
@@ -271,26 +266,6 @@ class Signthispetetionform(blocks.StructBlock):
         icon="placeholder"
 
 
-# class StudentProfileBlock(blocks.StructBlock):
-
-#      profile = blocks.ListBlock(
-#         blocks.StructBlock(
-#     [
-
-#          ("student_Image", ImageChooserBlock(required=True)),
-#          ("student_name", blocks.TextBlock(required=True)),
-#          ("proffesion", blocks.TextBlock(required=True)),
-#          ("student_university", blocks.TextBlock(required=True)),
-#          ("student_university_place", blocks.TextBlock(required=True)),
-#          ("unvirsty_icon", ImageChooserBlock(required=True)),
-#          ("unvirsty_country_icon", ImageChooserBlock(required=True)),
-#     ]
-#     )
-#      )
-#      class Meta:
-#          template="streams/student_profile.html"
-#          label="StudentBlock"
-#          icon="placeholder"
 
 
 

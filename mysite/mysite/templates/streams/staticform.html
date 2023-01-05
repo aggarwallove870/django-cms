@@ -7,7 +7,8 @@
             <h2>Register Now!</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
   
-            <form class="educator-form">
+            <form  method="POST" action={% url 'educatorform' %} class="educator-form">
+              {% csrf_token %}
               <div class="row">
     <div class="col-12">
       <label for="exampleInputEmail1" class="form-label">First Name</label>
@@ -23,37 +24,37 @@
     </div>
     <div class="col-12">
       <label for="exampleInputEmail1" class="form-label">Name of your school<i>(Middle School or High School)</i></label>
-      <input type="text" class="form-control" placeholder="" name="name_of_urschool" aria-label="Last name">
+      <input type="text" class="form-control" placeholder="" name="name_of_school" aria-label="Last name">
     </div>
   
     <div class="col-md-6 radio-div">
       <label for="exampleInputEmail1" class="form-label">Are you a:</label>
       <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+    <input class="form-check-input" type="radio" name="areyoua" value="Teacher" id="flexRadioDefault1">
     <label class="form-check-label" for="flexRadioDefault1">
       Teacher
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <input class="form-check-input" type="radio" value="principal" name="areyoua" id="flexRadioDefault2">
     <label class="form-check-label" for="flexRadioDefault2">
      Principal or vice principal
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <input class="form-check-input" type="radio" value="Guidance" name="areyoua" id="flexRadioDefault2">
     <label class="form-check-label" for="flexRadioDefault2">
      Guidance Counsellor
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <input class="form-check-input" type="radio" value="PTA" name="areyoua" id="flexRadioDefault2">
     <label class="form-check-label" for="flexRadioDefault2">
      PTA representative
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+    <input class="form-check-input" type="radio" value="youthorganization" name="areyoua" id="flexRadioDefault2">
     <label class="form-check-label" for="flexRadioDefault2">
      Other: eg- youth organization representative/participant
     </label>
@@ -67,7 +68,7 @@
      <label class="form-check-label" for="flexRadioDefault2">
      Grade Level
     </label>
-  <input type="text" class="form-control mt-3" placeholder="" aria-label="Last name"> 
+  <input type="text"name="grade_level" class="form-control mt-3" placeholder="" aria-label="Last name"> 
     </div>
   </div>
   <input type="text" class="form-control mt-3 other-option-field desktop" placeholder="" aria-label="Last name"> 
@@ -79,7 +80,7 @@
     </p>
   </div>
   <div class="col-12">
-    <input type="submit" value="SUBMIT">
+    <button type="submit" class="btn btn-primary">Submit</button>
     </div>
   </div>
             </form>

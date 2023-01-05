@@ -17,7 +17,7 @@ from wagtail.core.models import Orderable
 from wagtail.snippets.models import register_snippet
 from wagtailmenus.panels import menupage_panel
 
-
+from ckeditor.fields import RichTextField
 from django.db import models
 
 # Create your models here.
@@ -182,3 +182,12 @@ class FourDivSection(models.Model):
 
     def __str__(self):
         return self.text
+
+@register_snippet
+class Ck_editor(models.Model):
+    html = RichTextField(blank=True,null=True)
+    panels = [
+        FieldPanel('html'),
+    ]
+
+    
