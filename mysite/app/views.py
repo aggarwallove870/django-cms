@@ -65,29 +65,29 @@ def profile(request,id):
     obj=Leaderboard.objects.get(id=id)
     return render(request,'home/profile.html',{'obj':obj})
 
+    
 
-
-def signandshre(request):
-    if request.method =="POST":
-        first_name = request.POST.get('first_name')
-        print(first_name)
-        last_name = request.POST.get('last_name')
-        print(last_name)
-        email=  request.POST.get('email_address')
-        print(email,"-------HERE")
-        state= request.POST.get('state')
-        print(state,"-------")
-        try:
-            count_form=Signandshareform.objects.filter().last()
-            count_data=int(count_form.count)
-            count_data += 1
-        except:
-            count_data=0
-        obj = Signandshareform(first_name=first_name, last_name=last_name, email_address=email, state=state,count=count_data)
-        obj.save()
+# def signandshre(request):
+#     if request.method =="POST":
+#         first_name = request.POST.get('first_name')
+#         print(first_name)
+#         last_name = request.POST.get('last_name')
+#         print(last_name)
+#         email=  request.POST.get('email_address')
+#         print(email,"-------HERE")
+#         state= request.POST.get('state')
+#         print(state,"-------")
+#         try:
+#             count_form=Signandshareform.objects.filter().last()
+#             count_data=int(count_form.count)
+#             count_data += 1
+#         except:
+#             count_data=0
+#         obj = Signandshareform(first_name=first_name, last_name=last_name, email_address=email, state=state,count=count_data)
+#         obj.save()
     
         
-        print(count_data,"--------------------------------")
+#         print(count_data,"--------------------------------")
 
-    return redirect('http://68.183.194.137/sign-and-share/')
+#     return redirect('http://68.183.194.137/sign-and-share/')
 

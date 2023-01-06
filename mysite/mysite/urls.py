@@ -17,7 +17,7 @@ urlpatterns = [
     path("search/", search_views.search, name="search"),
     path("registerform/", views.registerform, name="registerform"),
     path("educatorform/", views.educatorform, name="educatorform"),
-    path("signandshre/",views.signandshre, name="signandshre"),
+    # path("signandshre/",views.signandshre, name="signandshre"),
     path("profile/<int:id>/",views.profile,name="profile"),
    
 ]

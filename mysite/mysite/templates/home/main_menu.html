@@ -25,8 +25,9 @@
 </style>
 {% comment %} {% navbarlogo as logo %} {% endcomment %}
 
-    {% for item in menu_items %}
-    <ul class="list-unstyled p-3" >
+   
+    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" >
+      {% for item in menu_items %}
         {% if item.has_children_in_menu %}
         <li class="nav-item dropdown ">
             <a class="nav-link dropdown-toggle" href="{{ item.href }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,11 +46,11 @@
         </li>
 
         {% endif %}
-     
+        {% endfor %}
     </ul>
 
 
-      {% endfor %}
+
        
 
 

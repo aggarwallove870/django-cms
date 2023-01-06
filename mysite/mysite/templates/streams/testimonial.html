@@ -29,19 +29,20 @@
                     
                     <p class="mb-0 ">{{item.caption}}</p>
                     <div class="test-elements">
-                      <div class="test-image">
-                     {% comment %} <img src="{% static 'images/star.png' %}" alt="">  {% endcomment %}
-                     
-                      {% for _ in ''|center:item.rating %}
-                      <span class="fa fa-star checked"></span>
-                      {% endfor %}
                       
-                    </div>
-                    <div class="test-name ms-3">
+                    <div class="test-name">
                     <h5 class="">{{item.username}}</h5>
                     <p class="mb-0" >{{item.proffesion}}</p>
                     </div>
                   </div>
+                  <div class="test-image">
+                    {% comment %} <img src="{% static 'images/star.png' %}" alt="">  {% endcomment %}
+                    
+                     {% for _ in ''|center:item.rating %}
+                     <span class="fa fa-star checked"></span>
+                     {% endfor %}
+                     
+                   </div>
                      </div> 
                     </div>
               

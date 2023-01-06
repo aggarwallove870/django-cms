@@ -80,7 +80,7 @@ body{
 }
 
 section.four-boxes-section {
-    padding-top: 50px;
+    padding-top: 80px;
 }
 .site-container{
     max-width:1170px !important;
@@ -101,9 +101,28 @@ section.four-boxes-section {
 
 header {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 80% 20%;
 }
 
+ header ul.dropdown-menu.show {
+        background: #fbd149;
+        list-style: none;
+        padding: 10px 0px;
+        border: none;
+}
+
+
+header  ul.dropdown-menu.show ul{
+padding:0px;
+}
+header  ul.dropdown-menu.show ul li{
+    list-style:none;
+    padding: 0px 20px 8px;
+}
+header  ul.dropdown-menu.show ul li a{
+color:#fff;
+text-decoration: none;
+}
 header .logo-side {
     background: #ffd100;
         padding: 0px 50px;
@@ -111,6 +130,16 @@ header .logo-side {
 
 header .donate-button-side a.donate-button{
 
+}
+section.leader-page {
+    padding: 80px 0px;
+}
+section.leader-page h3 {
+    font-size: 48px;
+    font-family: 'gothambold';
+    line-height: 48px;
+    color: #000;
+    margin-bottom:20px;
 }
 header .donate-button-side {
     background: #f76f00;
@@ -401,9 +430,20 @@ section.testimonial-section:before {
     width: 20px;
     border-radius: 100%;
 }
-.test-elements {
+/* .test-elements {
     display: flex;
     align-items: center;
+} */
+
+.test-name {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top:20px;
+}
+
+.test-image{
+    text-align: start;  
 }
 .test-image img {
     max-width: 100%!important;
@@ -629,7 +669,7 @@ section.educator-banner:after {
     font-family: 'gothambold';
 }
 .pb-130{
-        padding-bottom: 130px;
+        padding-bottom: 80px;
 }
 .content p.content-para {
     font-size: 20px;
@@ -640,7 +680,7 @@ section.educator-banner:after {
 
 section.educator-form {
     background: #ebebeb;
-    padding: 80px 0px 200px;
+    padding: 80px 0px 80px;
 }
 .educator-form h2 {
     font-size: 48px;
@@ -829,6 +869,10 @@ grid-template-columns:repeat(3 , 2fr);
 /*  profile page css end */
 
 /*  sign page css start */
+
+.sign-share-section{
+    padding-top:100px;
+}
 .sign-share-section h2 {
     font-family: 'gothammedium';
     font-size: 60px;

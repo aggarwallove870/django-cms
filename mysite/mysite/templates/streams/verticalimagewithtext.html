@@ -46,15 +46,14 @@
       <p>At <b>500,000 signatures</b> , this petition 
       becomes one of the <b>top signed on 
       Youth4Animals.org</b></p>
-      <div class="sign-time-box d-flex mb-5">
-        <div class="user-img"><img src="{% static 'images/user-icon.png' %}" clas="img-fluid"></div>
-         <div class="user-name">
-           <h4>Laura van der Horst </h4>
-           <p>signed 23 hours ago</p>
-         </div>
-        </div>
-      </div>
+
+
       <div class="sign-form">
+        <iframe src="https://api.leadconnectorhq.com/widget/form/VpRDZ8LHsZDLeJ8dz4lH" style="border:none;width:100%;" scrolling="no" id="VpRDZ8LHsZDLeJ8dz4lH"></iframe>
+      </div>
+      <script src="https://api.leadconnectorhq.com/js/form_embed.js"></script>
+      
+      {% comment %} <div class="sign-form">
         <h3>Sign this petition</h3>
         <form method="POST" action={% url 'signandshre' %} class="educator-form">
             {% csrf_token %}
@@ -80,7 +79,7 @@
           <button type="submit" class="btn ">Sign this petition</button>
       </form>
   
-        </div>
+        </div> {% endcomment %}
               </div>
             </div>
           </div>

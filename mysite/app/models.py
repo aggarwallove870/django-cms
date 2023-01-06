@@ -157,10 +157,10 @@ modeladmin_register(RegiisterData)
 
 
 class Signandshareform(models.Model):
-    first_name = models.CharField(max_length=255)
-    last_name= models.CharField(max_length=255)
-    email_address= models.EmailField(max_length=244)
-    state= models.CharField(max_length=255)
+    # first_name = models.CharField(max_length=255)
+    # last_name= models.CharField(max_length=255)
+    # email_address= models.EmailField(max_length=244)
+    # state= models.CharField(max_length=255)
     count=models.CharField(max_length=10000000)
 
 
@@ -172,7 +172,7 @@ class SignansShareData(ModelAdmin):
     menu_order = 200 
     add_to_settings_menu = False 
     exclude_from_explorer = False 
-    list_display = ("first_name","last_name","email_address","state")
+    list_display = ('count',)
 
 
 modeladmin_register(SignansShareData)

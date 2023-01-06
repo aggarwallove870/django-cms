@@ -120,11 +120,10 @@ class TestimonialSlider(blocks.StructBlock):
     testimonialslider= blocks.ListBlock(
         blocks.StructBlock(
             [
-            #    ("image", ImageChooserBlock(required=True)),
-               ("caption", blocks.TextBlock(required=True)),
-               ("username", blocks.TextBlock(required=True)),
-               ("proffesion", blocks.TextBlock(required=True)),
-               ("rating",blocks.TextBlock(required=True)),
+               ("caption", blocks.TextBlock()),
+               ("username", blocks.TextBlock()),
+               ("proffesion", blocks.TextBlock()),
+               ("rating",blocks.TextBlock()),
     ]
     )
     )
@@ -199,9 +198,11 @@ class StudentandEducatorblock(blocks.StructBlock):
                 ("heading_student", blocks.TextBlock(required=True)),
                 ("sub_heading_student", blocks.TextBlock(required=True)),
                 ("button_text_student", blocks.TextBlock(required=True)),
+                ("button_1_url", blocks.TextBlock(required=True)),
                 ("heading_educator", blocks.TextBlock(required=True)),
                 ("sub_heading_educator", blocks.TextBlock(required=True)),
                 ("button_text_educator", blocks.TextBlock(required=True)),
+                ("button_2_url", blocks.TextBlock(required=True)),
 
             ]
         )
