@@ -46,6 +46,8 @@ class FlexPage(Page):
         [
             ("title_and_text" , blocks.TitleAndTextBlock()),
             ("richtext", blocks.RichTextBlock()),
+            ("full_richtext", blocks.RichtextBlock()),
+            ("simple_richtext", blocks.SimpleRichtextBlock()),
             ("card",blocks.CardBlock()),
             ("fourdiv", blocks.FourdivBlock()),
             ("footer", blocks.FooterBlock()),
