@@ -19,4 +19,7 @@ def global_admin_js():
         '<script src="{}"></script>',
         static("/js/custom.js")
     )
+<<<<<<< HEAD
 
+=======
+>>>>>>> 373a255f9e65a6fce7b4f31be32b88c0b0d1c3d7

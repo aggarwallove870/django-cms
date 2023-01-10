@@ -6,8 +6,38 @@ from wagtail.core.blocks import RawHTMLBlock
 from ckeditor.fields import RichTextField
 from menu.models import Ck_editor
 from django import forms
+from wagtail.core.templatetags.wagtailcore_tags import richtext
 
-  
+
+
+
+class RichtextBlock(blocks.RichTextBlock):
+    """Richtext with all the features."""
+
+    def get_api_representation(self, value, context=None):
+        return richtext(value.source)
+
+    class Meta:  # noqa
+        template = "streams/richtext_block.html"
+        icon = "doc-full"
+        label = "Full RichText"
+
+
+class SimpleRichtextBlock(blocks.RichTextBlock):
+    """Richtext without (limited) all the features."""
+
+    def __init__(
+        self, required=True, help_text=None, editor="default", features=None, **kwargs
+    ):  # noqa
+        super().__init__(**kwargs)
+        self.features = ["bold", "italic", "link"]
+
+    class Meta:  # noqa
+        template = "streams/richtext_block.html"
+        icon = "edit"
+        label = "Simple RichText"
+
+
 class TitleAndTextBlock(blocks.StructBlock):
     title = blocks.CharBlock(required=True,help_text="Title")
     text = blocks.TextBlock(required=True,help_text="Text")

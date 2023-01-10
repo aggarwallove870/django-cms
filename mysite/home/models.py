@@ -38,37 +38,41 @@ class CarouselItem(Orderable):
     FieldPanel('username'),
     ]
 
+
 class Leaderboard(models.Model):
-    leader_name=models.CharField(max_length=100,null=True,blank=True)
-    leader_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL, null=True, blank=True, related_name="+")
-    leader_university_name=models.CharField(max_length=100,null=True,blank=True)
-    leader_university_address=models.CharField(max_length=100,null=True,blank=True)
+    leader_name = models.CharField(max_length=100, null=True, blank=True)
+    leader_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL, null=True, blank=True,
+                                     related_name="+")
+    leader_university_name = models.CharField(max_length=100, null=True, blank=True)
+    leader_university_address = models.CharField(max_length=100, null=True, blank=True)
     is_showing = models.BooleanField(default=False)
+    signatures = models.CharField(max_length=1000, null=True, blank=True)
+    assignment = models.CharField(max_length=1000, null=True, blank=True)
+    volunteehours = models.CharField(max_length=1000, null=True, blank=True)
+    student_description = models.CharField(max_length=1000, null=True)
 
-
-            
-    panels=[
+    panels = [
         MultiFieldPanel(
-        [
-            FieldPanel('leader_name'),
-            ImageChooserPanel('leader_image'),
-            FieldPanel('leader_university_name'),
-            FieldPanel('leader_university_address'),
-             FieldPanel('is_showing'),
-    ],
-    heading = 'Leaderborad-Detail',
-    )
+            [
+                FieldPanel('leader_name'),
+                ImageChooserPanel('leader_image'),
+                FieldPanel('leader_university_name'),
+                FieldPanel('leader_university_address'),
+                FieldPanel('is_showing'),
+                FieldPanel('signatures'),
+                FieldPanel('assignment'),
+                FieldPanel('volunteehours'),
+                FieldPanel('student_description'),
+            ],
+            heading='Leaderborad-Detail',
+        )
     ]
 
     def __str__(self):
         return self.leader_name
 
-
     class Meta:
-            verbose_name = "LeaderBoard_Section"
-
-
-    
+        verbose_name = "LeaderBoard_Section"
 
     
         
