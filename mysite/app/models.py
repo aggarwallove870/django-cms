@@ -68,6 +68,7 @@ class FlexPage(Page):
             # ("studentprofile", blocks.StudentProfileBlock()),
             ("studentachivment",blocks.StudentAchivmentBlock()),
             ("CustomHtml", blocks.CustomHtml()),
+            ('LeaderBoardScore',blocks.LeaderboardScore())
 
             
    

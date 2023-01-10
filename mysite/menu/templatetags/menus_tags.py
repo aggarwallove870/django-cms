@@ -25,7 +25,14 @@ def footer():
 # @register.inclusion_tag('streams/student_profile.html')
 def leaderboard():
     return Leaderboard.objects.all()
-    
+
+
+@register.simple_tag()
+# @register.inclusion_tag('streams/student_profile.html')
+def leaderboard_score():
+    return Leaderboard.objects.all().order_by('-score')[:12]
+
+
 @register.simple_tag()
 def cards():
     return FourDivSection.objects.all()
