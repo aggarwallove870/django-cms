@@ -1,4 +1,5 @@
 from django.db import models
+from wagtail.contrib.modeladmin.options import ModelAdmin
 from wagtail.core.models import Page
 from wagtail.models import Page, Orderable
 from django import forms
@@ -223,4 +224,31 @@ class HomePage(Page):
 #             template = 'streams/image_gallery.html'
 
 
+class LeaderboardScoreboard(models.Model):
+    leader_name = models.CharField(max_length=100, null=True, blank=True)
+    leader_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL, null=True, blank=True,
+                                     related_name="+")
+    signatures = models.IntegerField(default=0)
+
+    panels = [
+        MultiFieldPanel(
+            [
+                FieldPanel('leader_name'),
+                ImageChooserPanel('leader_image'),
+
+                FieldPanel('signatures'),
+
+            ],
+            heading='Leaderborad-scores',
+        )
+    ]
+
+    def __str__(self):
+        return self.leader_name
+
+    class Meta:
+        verbose_name = "LeaderBoard_Score"
+
+
+register_snippet(LeaderboardScoreboard)
 

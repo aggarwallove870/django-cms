@@ -1,3 +1,14 @@
+
+
+{% load wagtailimages_tags %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load menus_tags %}
+{% leaderboard as leaderboard %}
+
+
+
+{% leaderboard_score as leaderboard %}
 <style>
 
 .basic-style { background-color: #EFE6E2; }
@@ -22,6 +33,7 @@
 .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:last-child:after { width: calc(50% + 1px);}
 </style>
 
+
 <div class="container">
       <div class="horizontal">
         <div class="verticals twelve">
@@ -29,134 +41,63 @@
             <div class="mgt-container">
               <div class="mgt-wrapper">
                 <div class="mgt-item">
-                  <div class="mgt-item-parent">
-                    <div class="person">
-                      <img src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/matureman1-128.png" alt="">
-                      <p class="name">Level 1 / CEO</p>
-                    </div>
-                  </div>
-                  <div class="mgt-item-children">
-                    <div class="mgt-item-child">
-                      <div class="mgt-item">
-                        <div class="mgt-item-parent">
+
+                 <div class="mgt-item-parent">
                           <div class="person">
-                            <img src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/malecostume-128.png" alt="">
-                            <p class="name">Level 2 / IT Manager</p>
+                              {%image leaderboard.leader_image fill-300x200 as img  %}
+                            <img src="{{ img.url }}" alt="">
+                            <p class="name">{{ leaderboard.leader_name }}</p>
                           </div>
                         </div>
+
+                        {% for i in leaderboard.id|get_next_leader %}
+
                         <div class="mgt-item-children">
-                          <div class="mgt-item-child">
+                            {% if forloop.counter|divisibleby:2  %}
+                                 <div class="mgt-item-child">
                             <div class="mgt-item">
                               <div class="mgt-item-parent">
                                 <div class="person">
-                                  <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-128.png" alt="">
-                                  <p class="name">Level 3 / IT Developer</p>
-                                </div>
-                              </div>
-                              <div class="mgt-item-children">
-                                <div class="mgt-item-child">
-                                  <div class="person">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/supportmale-128.png" alt="">
-                                    <p class="name">Level 4 / Sales Jnr.</p>
-                                  </div>
-                                </div>
-                                <div class="mgt-item-child">
-                                  <div class="person">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/supportfemale-128.png" alt="">
-                                    <p class="name">Level 4 / Sales Jnr.</p>
-                                  </div>
+                                     {%image i.leader_image fill-300x200 as img  %}
+                                  <img src="{{ img.url }}" alt="">
+                                  <p class="name"> {{ i.leader_name }}</p>
                                 </div>
                               </div>
                             </div>
                           </div>
+
+
+
                           <div class="mgt-item-child">
                             <div class="mgt-item">
                               <div class="mgt-item-parent">
                                 <div class="person">
-                                  <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-128.png" alt="">
-                                  <p class="name">Level 3 / IT Developer</p>
+                                    {% with i.id|get_prev_leader as puser %}
+                                         {%image puser.leader_image fill-300x200 as img  %}
+                                  <img src="{{ img.url }}" alt="">
+                                  <p class="name">{{ puser.leader_name }}</p>
+                                    {% endwith %}
                                 </div>
                               </div>
-                              <div class="mgt-item-children">
-                                <div class="mgt-item-child">
-                                  <div class="person">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/supportmale-128.png" alt="">
-                                    <p class="name">Level 4 / Sales Jnr.</p>
-                                  </div>
-                                </div>
-                                <div class="mgt-item-child">
-                                  <div class="person">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/supportfemale-128.png" alt="">
-                                    <p class="name">Level 4 / Sales Jnr.</p>
-                                  </div>
-                                </div>
-                              </div>
+
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mgt-item-child">
-                      <div class="mgt-item">
-                        <div class="mgt-item-parent">
-                          <div class="person">
-                            <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-128.png" alt="">
-                            <p class="name">Level 2 / Sales Manager</p>
-                          </div>
-                        </div>
-                        <div class="mgt-item-children">
-                          <div class="mgt-item-child">
-                            <div class="mgt-item">
-                              <div class="mgt-item-parent">
-                                <div class="person">
-                                  <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-128.png" alt="">
-                                  <p class="name">Level 3 / IT Developer</p>
-                                </div>
-                              </div>
-                              <div class="mgt-item-children">
-                                <div class="mgt-item-child">
-                                  <div class="person">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/supportmale-128.png" alt="">
-                                    <p class="name">Level 4 / Sales Jnr.</p>
-                                  </div>
-                                </div>
-                                <div class="mgt-item-child">
-                                  <div class="person">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/supportfemale-128.png" alt="">
-                                    <p class="name">Level 4 / Sales Jnr.</p>
-                                  </div>
-                                </div>
-                              </div>
+                                {% else %}
+
+
+
+
+                            {% endif %}
                             </div>
-                          </div>
-                          <div class="mgt-item-child">
-                            <div class="mgt-item">
-                              <div class="mgt-item-parent">
-                                <div class="person">
-                                  <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/boy-128.png" alt="">
-                                  <p class="name">Level 3 / Sales Exe</p>
-                                </div>
-                              </div>
-                              <div class="mgt-item-children">
-                                <div class="mgt-item-child">
-                                  <div class="person">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/supportmale-128.png" alt="">
-                                    <p class="name">Level 4 / Sales Jnr.</p>
-                                  </div>
-                                </div>
-                                <div class="mgt-item-child">
-                                  <div class="person">
-                                    <img src="https://cdn1.iconfinder.com/data/icons/user-pictures/100/supportfemale-128.png" alt="">
-                                    <p class="name">Level 4 / Sales Jnr.</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+
+
+                        {% endfor %}
+
+
+
+
+
+
                 </div>
               </div>
             </div>
