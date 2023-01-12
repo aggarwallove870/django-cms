@@ -1,107 +1,262 @@
 
 
-{% load wagtailimages_tags %}
+
 {% load static %}
 {% load wagtailimages_tags %}
 {% load menus_tags %}
-{% leaderboard as leaderboard %}
 
 
 
-{% leaderboard_score as leaderboard %}
+
+
 <style>
-
-.basic-style { background-color: #EFE6E2; }
-.mgt-item-parent p { font-weight: 400; color: #DE5454;}
-
-.management-tree { background-color: #ffffff; font-family: inherit; padding: 40px;}
-.management-tree .person { text-align: center;}
-.management-tree .person img { max-width: 80px; border: 2px solid #d7d7d7; border-radius: 50%; overflow: hidden; background-color: #f7f7f7;}
-.management-tree .person p.name { background-color: #f7f7f7; padding: 5px; font-size: 12px; font-weight: normal; color: #676767; margin: 0; position: relative;}
-.management-tree .person p.name:before { content: ''; position: absolute; width: 2px; height: 5px; background-color: #d7d7d7; left: 50%; top: 0; transform: translateY(-100%);}
-
-.mgt-wrapper { display: flex;}
-.mgt-wrapper .mgt-item { display: flex; flex-direction: column; margin: auto;}
-.mgt-wrapper .mgt-item .mgt-item-parent { margin-bottom: 50px; position: relative; display: flex; justify-content: center;}
-.mgt-wrapper .mgt-item .mgt-item-parent:after { position: absolute; content: ''; width: 2px; height: 25px; bottom: 0; left: 50%; background-color: #d7d7d7; transform: translateY(100%);}
-.mgt-wrapper .mgt-item .mgt-item-children { display: flex; justify-content: center;}
-.mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child { padding: 0 15px; position: relative;}
-.mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:before, .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:after { content: ''; position: absolute; background-color: #d7d7d7; left: 0;}
-.mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:before { left: 50%; top: 0; transform: translateY(-100%); width: 2px; height: 25px;}
-.mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:after { top: -23px; transform: translateY(-100%); height: 2px; width: 100%;}
-.mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:first-child:after { left: 50%; width: 50%;}
-.mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:last-child:after { width: calc(50% + 1px);}
+  
+  .basic-style { background-color: #EFE6E2; }
+  .mgt-item-parent p { font-weight: 400; color: #DE5454;}
+  
+  .management-tree { background-color: #ffffff; font-family: inherit; padding: 40px;}
+  .management-tree .person { text-align: center;}
+  .management-tree .person img { max-width: 80px; border: 2px solid #d7d7d7; border-radius: 50%; overflow: hidden; background-color: #f7f7f7;}
+  .management-tree .person p.name { background-color: #f7f7f7; padding: 5px; font-size: 12px; font-weight: normal; color: #676767; margin: 0; position: relative;}
+  .management-tree .person p.name:before { content: ''; position: absolute; width: 2px; height: 5px; background-color: #d7d7d7; left: 50%; top: 0; transform: translateY(-100%);}
+  
+  .mgt-wrapper { display: flex;}
+  .mgt-wrapper .mgt-item { display: flex; flex-direction: column; margin: auto;}
+  .mgt-wrapper .mgt-item .mgt-item-parent { margin-bottom: 50px; position: relative; display: flex; justify-content: center;}
+  .mgt-wrapper .mgt-item .mgt-item-parent:after { position: absolute; content: ''; width: 2px; height: 25px; bottom: 0; left: 50%; background-color: #d7d7d7; transform: translateY(100%);}
+  .mgt-wrapper .mgt-item .mgt-item-children { display: flex; justify-content: center;}
+  .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child { padding: 0 15px; position: relative;}
+  .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:before, .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:after { content: ''; position: absolute; background-color: #d7d7d7; left: 0;}
+  .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:before { left: 50%; top: 0; transform: translateY(-100%); width: 2px; height: 25px;}
+  .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:after { top: -23px; transform: translateY(-100%); height: 2px; width: 100%;}
+  .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:first-child:after { left: 50%; width: 50%;}
+  .mgt-wrapper .mgt-item .mgt-item-children .mgt-item-child:last-child:after { width: calc(50% + 1px);}
 </style>
 
-
 <div class="container">
-      <div class="horizontal">
-        <div class="verticals twelve">
-          <section class="management-tree">
-            <div class="mgt-container">
-              <div class="mgt-wrapper">
-                <div class="mgt-item">
-
-                 <div class="mgt-item-parent">
-                          <div class="person">
-                              {%image leaderboard.leader_image fill-300x200 as img  %}
-                            <img src="{{ img.url }}" alt="">
-                            <p class="name">{{ leaderboard.leader_name }}</p>
+  <div class="horizontal">
+    <div class="verticals twelve">
+      <section class="management-tree">
+        <div class="mgt-container">
+          <div class="mgt-wrapper">
+            <div class="mgt-item">
+              
+              <div class="mgt-item-parent">
+                {% with 0|leaderboard_score as leaderboard %}
+                {% if leaderboard %}
+                <div class="person">
+                  {%image leaderboard.leader_image fill-300x300 as img  %}
+                  <img src="{{ img.url }}" alt="">
+                  <p class="name">{{ leaderboard.leader_name }}</p>
+                </div>
+                {% endif %}
+                {% endwith %}
+              </div>
+              
+              {% if 1|leaderboard_score  %}
+              <div class="mgt-item-children">
+                <div class="mgt-item-child">
+                  <div class="mgt-item">
+                    
+                    <div class="mgt-item-parent">
+                      {% with 1|leaderboard_score as leaderboard %}
+                      {% if leaderboard %}
+                      <div class="person">
+                        {%image leaderboard.leader_image fill-300x300 as img  %}
+                        <img src="{{ img.url }}" alt="">
+                        <p class="name">{{ leaderboard.leader_name }}</p>
+                      </div>
+                      {% endif %}
+                      {% endwith %}
+                    </div>
+                    {% if 3|leaderboard_score %}
+                    <div class="mgt-item-children">
+                      <div class="mgt-item-child">
+                        <div class="mgt-item">
+                          <div class="mgt-item-parent">
+                            {% with 3|leaderboard_score as leaderboard %}
+                            {% if leaderboard %}
+                            <div class="person">
+                              {%image leaderboard.leader_image fill-300x300 as img  %}
+                              <img src="{{ img.url }}" alt="">
+                              <p class="name">{{ leaderboard.leader_name }}</p>
+                            </div>
+                            {% endif %}
+                            {% endwith %}
+                          </div>
+                          <div class="mgt-item-children">
+                            <div class="mgt-item-child">
+                              {% with 7|leaderboard_score as leaderboard %}
+                              {% if leaderboard %}
+                              <div class="person">
+                                {%image leaderboard.leader_image fill-300x300 as img  %}
+                                <img src="{{ img.url }}" alt="">
+                                <p class="name">{{ leaderboard.leader_name }}</p>
+                              </div>
+                              {% endif %}
+                              {% endwith %}
+                            </div>
+                            <div class="mgt-item-child">
+                              {% with 8|leaderboard_score as leaderboard %}
+                              {% if leaderboard %}
+                              <div class="person">
+                                {%image leaderboard.leader_image fill-300x300 as img  %}
+                                <img src="{{ img.url }}" alt="">
+                                <p class="name">{{ leaderboard.leader_name }}</p>
+                              </div>
+                              {% endif %}
+                              {% endwith %}
+                            </div>
                           </div>
                         </div>
-
-                        {% for i in leaderboard.id|get_next_leader %}
-
-                        <div class="mgt-item-children">
-                            {% if forloop.counter|divisibleby:2  %}
-                                 <div class="mgt-item-child">
-                            <div class="mgt-item">
-                              <div class="mgt-item-parent">
-                                <div class="person">
-                                     {%image i.leader_image fill-300x200 as img  %}
-                                  <img src="{{ img.url }}" alt="">
-                                  <p class="name"> {{ i.leader_name }}</p>
-                                </div>
-                              </div>
+                      </div>
+                      <div class="mgt-item-child">
+                        <div class="mgt-item">
+                          <div class="mgt-item-parent">
+                            {% with 4|leaderboard_score as leaderboard %}
+                            {% if leaderboard %}
+                            <div class="person">
+                              {%image leaderboard.leader_image fill-300x300 as img  %}
+                              <img src="{{ img.url }}" alt="">
+                              <p class="name">{{ leaderboard.leader_name }}</p>
                             </div>
-                          </div>
-
-
-
-                          <div class="mgt-item-child">
-                            <div class="mgt-item">
-                              <div class="mgt-item-parent">
-                                <div class="person">
-                                    {% with i.id|get_prev_leader as puser %}
-                                         {%image puser.leader_image fill-300x200 as img  %}
-                                  <img src="{{ img.url }}" alt="">
-                                  <p class="name">{{ puser.leader_name }}</p>
-                                    {% endwith %}
-                                </div>
-                              </div>
-
-                            </div>
-                          </div>
-                                {% else %}
-
-
-
-
                             {% endif %}
+                            {% endwith %}
+                          </div>
+                          <div class="mgt-item-children">
+                            <div class="mgt-item-child">
+                              {% with 9|leaderboard_score as leaderboard %}
+                              {% if leaderboard %}
+                              <div class="person">
+                                {%image leaderboard.leader_image fill-300x300 as img  %}
+                                <img src="{{ img.url }}" alt="">
+                                <p class="name">{{ leaderboard.leader_name }}</p>
+                              </div>
+                              {% endif %}
+                              {% endwith %}
                             </div>
-
-
-                        {% endfor %}
-
-
-
-
-
-
+                            <div class="mgt-item-child">
+                              {% with 10|leaderboard_score as leaderboard %}
+                              {% if leaderboard %}
+                              <div class="person">
+                                {%image leaderboard.leader_image fill-300x300 as img  %}
+                                <img src="{{ img.url }}" alt="">
+                                <p class="name">{{ leaderboard.leader_name }}</p>
+                              </div>
+                              {% endif %}
+                              {% endwith %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% endif %}
+                  </div>
                 </div>
+                {% if 2|leaderboard_score %}
+                <div class="mgt-item-child">
+                  <div class="mgt-item">
+                    <div class="mgt-item-parent">
+                      {% with 2|leaderboard_score as leaderboard %}
+                      {% if leaderboard %}
+                      <div class="person">
+                        {%image leaderboard.leader_image fill-300x300 as img  %}
+                        <img src="{{ img.url }}" alt="">
+                        <p class="name">{{ leaderboard.leader_name }}</p>
+                      </div>
+                      {% endif %}
+                      {% endwith %}
+                    </div>
+                    <div class="mgt-item-children">
+                      <div class="mgt-item-child">
+                        <div class="mgt-item">
+                          <div class="mgt-item-parent">
+                            {% with 5|leaderboard_score as leaderboard %}
+                            {% if leaderboard %}
+                            <div class="person">
+                              {%image leaderboard.leader_image fill-300x300 as img  %}
+                              <img src="{{ img.url }}" alt="">
+                              <p class="name">{{ leaderboard.leader_name }}</p>
+                            </div>
+                            {% endif %}
+                            {% endwith %}
+                          </div>
+                          <div class="mgt-item-children">
+                            <div class="mgt-item-child">
+                              {% with 11|leaderboard_score as leaderboard %}
+                              {% if leaderboard %}
+                              <div class="person">
+                                {%image leaderboard.leader_image fill-300x300 as img  %}
+                                <img src="{{ img.url }}" alt="">
+                                <p class="name">{{ leaderboard.leader_name }}</p>
+                              </div>
+                              {% endif %}
+                              {% endwith %}
+                            </div>
+                            <div class="mgt-item-child">
+                              {% with 12|leaderboard_score as leaderboard %}
+                              {% if leaderboard %}
+                              <div class="person">
+                                {%image leaderboard.leader_image fill-300x300 as img  %}
+                                <img src="{{ img.url }}" alt="">
+                                <p class="name">{{ leaderboard.leader_name }}</p>
+                              </div>
+                              {% endif %}
+                              {% endwith %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="mgt-item-child">
+                        <div class="mgt-item">
+                          <div class="mgt-item-parent">
+                            {% with 7|leaderboard_score as leaderboard %}
+                            {% if leaderboard %}
+                            <div class="person">
+                              {%image leaderboard.leader_image fill-300x300 as img  %}
+                              <img src="{{ img.url }}" alt="">
+                              <p class="name">{{ leaderboard.leader_name }}</p>
+                            </div>
+                            {% endif %}
+                            {% endwith %}
+                          </div>
+                          <div class="mgt-item-children">
+                            <div class="mgt-item-child">
+                              {% with 13|leaderboard_score as leaderboard %}
+                              {% if leaderboard %}
+                              <div class="person">
+                                {%image leaderboard.leader_image fill-300x300 as img  %}
+                                <img src="{{ img.url }}" alt="">
+                                <p class="name">{{ leaderboard.leader_name }}</p>
+                              </div>
+                              {% endif %}
+                              {% endwith %}
+                            </div>
+                            <div class="mgt-item-child">
+                              {% with 14|leaderboard_score as leaderboard %}
+                              {% if leaderboard %}
+                              <div class="person">
+                                {%image leaderboard.leader_image fill-300x300 as img  %}
+                                <img src="{{ img.url }}" alt="">
+                                <p class="name">{{ leaderboard.leader_name }}</p>
+                              </div>
+                              {% endif %}
+                              {% endwith %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
               </div>
+              {% endif %}
+              
             </div>
-          </section>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
+  </div>
+</div>

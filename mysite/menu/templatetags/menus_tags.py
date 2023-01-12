@@ -27,11 +27,18 @@ def leaderboard():
     return Leaderboard.objects.all()
 
 
-@register.simple_tag()
+@register.filter()
 # @register.inclusion_tag('streams/student_profile.html')
-def leaderboard_score():
-    return LeaderboardScoreboard.objects.all().order_by('-signatures').first()
-
+def leaderboard_score(val):
+    try:
+        top_leader = LeaderboardScoreboard.objects.all().order_by('-signatures')[0:15].values('id')
+        top = []
+        for a in top_leader:
+            top.append(a)
+        posid = top[val]['id']
+        return LeaderboardScoreboard.objects.get(id=posid)
+    except:
+        return None
 
 @register.simple_tag()
 def cards():
@@ -66,10 +73,8 @@ def ck_editor():
 
 @register.filter()
 def get_next_leader(num):
-    sign = LeaderboardScoreboard.objects.get(id=num).signatures
-    return LeaderboardScoreboard.objects.filter(signatures__lt=sign).order_by('-signatures')[0:2]
-
-@register.filter()
-def get_prev_leader(num):
-    sign = LeaderboardScoreboard.objects.get(id=num).signatures
-    return LeaderboardScoreboard.objects.filter(signatures__gt=sign).order_by('signatures').first()
+    try:
+        sign = LeaderboardScoreboard.objects.get(id=num).signatures
+        return LeaderboardScoreboard.objects.filter(signatures__lt=sign).order_by('-signatures').first()
+    except:
+        return None
