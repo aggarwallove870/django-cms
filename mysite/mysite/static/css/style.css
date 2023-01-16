@@ -680,7 +680,21 @@ section.educator-banner:after {
 
 section.educator-form {
     background: #ebebeb;
-    padding: 80px 0px 80px;
+    padding:30px;
+
+}
+.educator{
+    padding-bottom:70px;
+}
+/* section.educator-form.harness-text{
+    padding-top:0px;    
+} */
+section.educator-form.harness-text p {
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 36px;
+    color: #6a6a6a;
+    font-family: 'gothamlight';
 }
 .educator-form h2 {
     font-size: 48px;
@@ -828,6 +842,7 @@ grid-template-columns:repeat(3 , 2fr);
 .pb-50 {
     padding-bottom: 50px;
 }
+
 .achivements-points h3 {
     font-family: 'proxima_nova_bold-webfont';
     font-size: 48px;
@@ -1121,7 +1136,7 @@ section.leaderboard:before{
     font-size: 30px;
 }
 section.educator-form{
-	    padding: 40px 0px 40px;
+	    padding: 30px 0px 30px;
 }
 .educator .count-box {
     grid-template-rows: 93px 57px;

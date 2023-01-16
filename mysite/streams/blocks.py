@@ -18,7 +18,7 @@ class RichtextBlock(blocks.RichTextBlock):
         return richtext(value.source)
 
     class Meta:  # noqa
-        template = "streams/richtext_block.html"
+        template = "streams/richtext.html"
         icon = "doc-full"
         label = "Full RichText"
 
