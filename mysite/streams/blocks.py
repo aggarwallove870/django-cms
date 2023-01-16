@@ -51,7 +51,7 @@ class RichTextBlock(blocks.StructBlock):
     caption = blocks.RichTextBlock(
     required=False,
     label='Caption',
-  
+
 )
     # html = blocks.RawHTMLBlock()
     class Meta:
@@ -297,7 +297,12 @@ class Signthispetetionform(blocks.StructBlock):
         icon="placeholder"
 
 
+class LeaderboardScore(blocks.StructBlock):
 
+    class Meta:
+        template ="streams/leader_board_score.html"
+        label="leaderboardscore"
+        icon="placeholder"
 
 
 class StudentAchivmentBlock(blocks.StructBlock):

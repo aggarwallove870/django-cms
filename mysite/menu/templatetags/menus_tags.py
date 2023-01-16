@@ -1,7 +1,7 @@
 from django import template
 
 from ..models import Menu , NavbarLogo , Footer, MenuItem, FourDivSection,Ck_editor
-from home.models import Leaderboard
+from home.models import Leaderboard,LeaderboardScoreboard
 from django.template.response import TemplateResponse
 from app.models import Signandshareform
 from wagtail.core.models import Page, Site
@@ -25,7 +25,21 @@ def footer():
 # @register.inclusion_tag('streams/student_profile.html')
 def leaderboard():
     return Leaderboard.objects.all()
-    
+
+
+@register.filter()
+# @register.inclusion_tag('streams/student_profile.html')
+def leaderboard_score(val):
+    try:
+        top_leader = LeaderboardScoreboard.objects.all().order_by('-signatures')[0:15].values('id')
+        top = []
+        for a in top_leader:
+            top.append(a)
+        posid = top[val]['id']
+        return LeaderboardScoreboard.objects.get(id=posid)
+    except:
+        return None
+
 @register.simple_tag()
 def cards():
     return FourDivSection.objects.all()
@@ -55,5 +69,12 @@ def petition_count(context):
 @register.simple_tag()
 def ck_editor():
     pass
-    
 
+
+@register.filter()
+def get_next_leader(num):
+    try:
+        sign = LeaderboardScoreboard.objects.get(id=num).signatures
+        return LeaderboardScoreboard.objects.filter(signatures__lt=sign).order_by('-signatures').first()
+    except:
+        return None
