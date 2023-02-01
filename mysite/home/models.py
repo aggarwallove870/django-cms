@@ -18,7 +18,7 @@ from modelcluster.fields import ParentalKey
 
 from wagtail.fields import StreamField
 from wagtail.admin.panels import StreamFieldPanel
-
+from tinymce.models import HTMLField
 class CarouselItem(Orderable):
     image = models.ForeignKey(
         'wagtailimages.Image',
@@ -39,6 +39,7 @@ class CarouselItem(Orderable):
     FieldPanel('username'),
     ]
 
+  
 
 class Leaderboard(models.Model):
     leader_name = models.CharField(max_length=100, null=True, blank=True)
@@ -50,7 +51,7 @@ class Leaderboard(models.Model):
     signatures = models.CharField(max_length=1000, null=True, blank=True)
     assignment = models.CharField(max_length=1000, null=True, blank=True)
     volunteehours = models.CharField(max_length=1000, null=True, blank=True)
-    student_description = models.CharField(max_length=1000, null=True)
+    student_description = HTMLField()
 
     panels = [
         MultiFieldPanel(

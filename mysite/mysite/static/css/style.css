@@ -81,14 +81,14 @@ section.animal-challange ol li , section.animal-challange ul li {
     font-size: 20px;
     letter-spacing: 0px;
     line-height: 36px;
-    color: #6a6a6a;
+    color: #333;
     font-family: 'gothamlight';
 }
 section.educator-form ol li , section.educator-form ul li {
     font-size: 20px;
     letter-spacing: 0px;
     line-height: 36px;
-    color: #6a6a6a;
+    color: #333;
     font-family: 'gothamlight';
 }
 .profile-section .profile-image img {
@@ -148,7 +148,7 @@ header .donate-button-side a.donate-button{
 
 }
 section.leader-page {
-    padding: 80px 0px;
+    padding: 0px 0px;
 }
 section.leader-page h3 {
     font-size: 48px;
@@ -256,7 +256,7 @@ section.animals-banner:after {
 font-size: 20px;
 letter-spacing: 0px;
 line-height: 36px;
-color: #6a6a6a;
+color: #333;
 font-family: 'gothamlight';
 }
 .col-box:nth-child(2) .count-box  , .col-box:nth-child(3) .count-box{
@@ -691,7 +691,7 @@ section.educator-banner:after {
     font-size: 20px;
     font-family: 'gothamlight';
     line-height: 36px;
-    color: #6a6a6a;
+    color: #333;
 }
 
 section.educator-form {
@@ -709,7 +709,7 @@ section.educator-form.harness-text p {
     font-size: 20px;
     letter-spacing: 0px;
     line-height: 36px;
-    color: #6a6a6a;
+    color: #333;
     font-family: 'gothamlight';
 }
 .educator-form h2 {
@@ -718,7 +718,7 @@ section.educator-form.harness-text p {
 }
 .educator-form p{
     line-height: 36px;
-    color: #6a6a6a;
+    color: #333;
     font-size: 20px;
     font-family: 'gothamlight';
 }
@@ -925,13 +925,13 @@ grid-template-columns:repeat(3 , 2fr);
 .range-content h5 {
     font-family: 'gothamlight';
     font-size: 20px;
-    color: #6a6a6a;
+    color: #333;
     line-height: 30px;
 }
 .range-content p {
     font-family: 'gothamlight';
     font-size: 20px;
-    color: #6a6a6a;
+    color: #333;
     line-height: 30px;
 }
 .range-content b {
@@ -960,7 +960,7 @@ grid-template-columns:repeat(3 , 2fr);
 .range-content .sign-time-box p {
     font-family: 'gothamlight';
     font-size: 18px;
-    color: #6a6a6a;
+    color: #333;
     line-height: 30px;
     margin-bottom: 0px;
 }
@@ -1001,7 +1001,7 @@ grid-template-columns:repeat(3 , 2fr);
 .sign-cont p {
     font-family: 'gothamlight';
     font-size: 20px;
-    color: #6a6a6a;
+    color: #333;
     line-height: 30px;
     margin-bottom: 30px;
 }
@@ -1022,7 +1022,7 @@ section.sign-content h2 {
 section.sign-content  p.content-para {
     font-size: 20px;
     line-height: 36px;
-    color: #6a6a6a;
+    color: #333;
     font-family: 'gothambook_italic';
 }
 
@@ -1665,7 +1665,8 @@ header a.donate-button {
 }	
 
 header .logo-side a.navbar-brand img {
-    width: 90px;
+    width: 100%;
+    max-width: 60%;
 }
 header .donate-button-side{
 	width: 79px;

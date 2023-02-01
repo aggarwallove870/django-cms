@@ -19,6 +19,7 @@ urlpatterns = [
     path("educatorform/", views.educatorform, name="educatorform"),
     # path("signandshre/",views.signandshre, name="signandshre"),
     path("profile/<int:id>/",views.profile,name="profile"),
+    path('tinymce/', include('tinymce.urls')),
    
 ]
 

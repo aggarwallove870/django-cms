@@ -76,7 +76,7 @@
           </div>
           <div class="mb-3">
             <img src="{% static 'images/country-icon.png' %}" class="img-fluid">
-            <span class="ms-2">{{obj.leader_university_name}}</span>
+            <span class="ms-2">{{obj.leader_university_address}}</span>
           </div>
         </div>
       </div>
@@ -96,16 +96,20 @@
         <div class="three-achivements text-center">
           <div class="achivements-points">
             <p class="mb-0">SIGNATURES</p>
-            <h3>{{obj.signatures}}+</h3>
+              
+        {%if obj.signatures == None %} <h3>0+</h3>{% else %} <h3>{{obj.signatures}}+</h3>{% endif %}
+           {% comment %} {{obj.signatures}} {% endcomment %}
             <span>SIGNED</span>
           </div>
           <div class="achivements-points">
             <p class="mb-0">Assignments</p>
-            <h3>{{obj.assignment}}</h3>
+    
+            {%if obj.assignment == None %} <h3>0+</h3>{% else %} <h3>{{obj.assignment}}+</h3>{% endif %}
           </div>
           <div class="achivements-points">
             <p class="mb-0">VOLUNTEER HOURS</p>
-            <h3>{{obj.volunteehours}}</h3>
+            <h3></h3>
+            {%if obj.volunteehours == None %} <h3>0+</h3>{% else %} <h3>{{obj.volunteehours}}+</h3>{% endif %}
             <span>HOURS</span>
           </div>
         </div>
@@ -124,7 +128,7 @@
         <div class="content">
           <p class="content-para">
             {% if obj.student_description %}
-            {{obj.student_description}}</p>
+            {{obj.student_description | safe}}</p>
             {% else %}
             {% endif %}
 
