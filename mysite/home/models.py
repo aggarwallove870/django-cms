@@ -45,7 +45,7 @@ class Leaderboard(models.Model):
     leader_name = models.CharField(max_length=100, null=True, blank=True)
     leader_image = models.ForeignKey("wagtailimages.Image", on_delete=models.SET_NULL, null=True, blank=True,
                                      related_name="+")
-    leader_university_name = models.CharField(max_length=100, null=True, blank=True)
+    leader_university_name = models.CharField(max_length=100, null=True,blank=True)
     leader_university_address = models.CharField(max_length=100, null=True, blank=True)
     is_showing = models.BooleanField(default=False)
     signatures = models.CharField(max_length=1000, null=True, blank=True)

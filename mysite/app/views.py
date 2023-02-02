@@ -30,7 +30,7 @@ def registerform(request):
 
         print(from_email,"------++++_____")
 
-        return redirect('http://68.183.194.137/register/student/')
+        return redirect('/register/student/')
 
 def educatorform(request):
     
@@ -58,7 +58,7 @@ def educatorform(request):
 
         print(from_email,"------++++_____")
 
-        return redirect('http://68.183.194.137/register/educators/')
+        return redirect('/register/educators/')
 
 
 def profile(request,id):
